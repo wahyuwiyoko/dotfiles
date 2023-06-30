@@ -1,0 +1,2 @@
+# /usr/bin/select-editor
+SELECTED_EDITOR="nvim"

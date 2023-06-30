@@ -1,0 +1,15 @@
+[user]
+  name =
+  email =
+  signingKey =
+[core]
+  editor = nvim
+[init]
+  defaultBranch = main
+[commit]
+  gpgSign = true
+[alias]
+  st = status
+  cm = commit
+  onel = log --oneline
+  graph = log --all --oneline --decorate --graph

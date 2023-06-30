@@ -1,0 +1,43 @@
+general {
+  output_format = "i3bar"
+  colors = true
+  interval = 5
+  color_good = "#9ccfd8"
+  color_degraded = "#f6c177"
+  color_bad = "#eb6f92"
+}
+
+order += "wireless _first_"
+order += "volume master"
+order += "battery all"
+order += "tztime local"
+
+wireless _first_ {
+  format_up = "%essid"
+  format_down = "Disconnected"
+}
+
+volume master {
+  format = "VOL %volume"
+  format_muted = "MUTED"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
+}
+
+battery all {
+  format = "%status %percentage"
+  format_down = "No Battery"
+  status_chr = "CHR"
+  status_bat = "BAT"
+  status_unk = "UNK"
+  status_full = "FULL"
+  path = "/sys/class/power_supply/BAT%d/uevent"
+  low_threshold = 30
+  threshold_type = "percentage"
+  integer_battery_capacity = true
+}
+
+tztime local {
+  format = "%b %-e, %-l:%M %p"
+}

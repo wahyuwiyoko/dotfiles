@@ -1,0 +1,208 @@
+# Set modifier
+set $mod Mod1
+
+# Font for window titles
+font pango:DejaVu Sans 11
+
+# Use $mod+Mouse to drag floating windows
+floating_modifier $mod
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Window style
+title_align center
+hide_edge_borders both
+default_border pixel 3
+default_floating_border pixel 3
+popup_during_fullscreen smart
+gaps inner 7px
+
+# Toggle window border
+bindsym $mod+t border toggle 
+
+# Autostart
+exec --no-startup-id xwallpaper --zoom ~/Pictures/Wallpapers/wallpaper.jpg
+exec --no-startup-id xset s off -dpms # Disable screen saver
+exec --no-startup-id picom -b
+
+# Key bindings for apps and system
+bindsym $mod+d exec --no-startup-id "dmenu_run -b -nf '#e0def4' -nb '#191724' -sb '#c4a7e7' -sf '#191724' -p 'dmenu'"
+bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Shift+x exec --no-startup-id "i3lock -c 191724; exec systemctl suspend"
+bindsym $mod+Shift+f exec --no-startup-id firefox
+bindsym $mod+Shift+p exec --no-startup-id firefox --private-window
+bindsym $mod+Shift+d exec --no-startup-id "killall dunst; exec notify-send 'Restart Dunst'"
+bindsym Print exec --no-startup-id flameshot launcher
+
+# Change focused window
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# Alternatively, can use the cursor keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# Alternatively, can use the cursor keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Splitting containers
+bindsym $mod+h split horizontal; exec --no-startup-id notify-send "Split horizontally"
+bindsym $mod+v split vertical; exec --no-startup-id notify-send "Split vertically"
+
+# Enter fullscreen mode for focused container
+bindsym $mod+f fullscreen toggle
+
+# Change container layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+# Focus the parent container
+bindsym $mod+a focus parent
+
+# Names for default workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace
+bindsym $mod+Shift+r restart
+
+# Exit i3 (log out X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit? This will end your X session.' -B 'Yes' 'i3-msg exit'"
+
+# Touchpad controls
+exec --no-startup-id xinput set-prop "HTIX5288:00 093A:0255 Touchpad" "libinput Tapping Enabled" 1 # Enable tap-to-click
+
+# Screen brightness controls
+bindsym $mod+Delete exec --no-startup-id brightnessctl -q s +1% # Increase brightness
+bindsym $mod+BackSpace exec --no-startup-id brightnessctl -q s 1%- # Decrease brightness
+
+# Resize window
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym semicolon resize grow width 10 px or 10 ppt
+
+  # Same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
+
+  # Back to normal
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
+}
+
+# Toggle hide and show status bar
+bindsym $mod+n bar mode toggle
+
+set $base #191724
+set $surface #1f1d2e
+set $overlay #26233a
+set $muted #6e6a86
+set $subtle #908caa
+set $text #e0def4
+set $love #eb6f92
+set $gold #f6c177
+set $rose #ebbcba
+set $pine #31748f
+set $foam #9ccfd8
+set $iris #c4a7e7
+set $highlight #524f67
+
+# Start i3bar to display a workspace bar
+bar {
+  status_command i3status
+  position top
+  tray_output none
+  font pango:JetBrains Mono 11
+  separator_symbol " | "
+  padding 1px
+
+  colors {
+    background $base
+    statusline $text
+    separator  $highlight
+
+    # Class            Border   Bground Text
+    focused_workspace  $iris    $iris    $base
+    active_workspace   $iris    $iris    $base
+    inactive_workspace $overlay $overlay $text
+    urgent_workspace   $love    $love    $base
+    binding_mode       $rose    $rose    $base
+  }
+}
+
+# Class                 Border     Background Text  Indicator  Child Border
+client.focused          $iris      $highlight $text $iris      $iris
+client.focused_inactive $iris      $highlight $text $iris      $iris
+client.unfocused        $surface   $surface   $text $surface   $surface
+client.urgent           $love      $highlight $text $love      $love
+client.placeholder      $highlight $highlight $text $highlight $highlight
+client.background       $base

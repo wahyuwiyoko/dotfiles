@@ -1,0 +1,36 @@
+[global]
+geometry = "300x50-20+35"
+padding = 16
+horizontal_padding = 24
+frame_width = 3
+frame_color = "#524f67"
+separator_color = frame
+font = DejaVu Sans 11
+line_height = 4
+markup = full
+format = "<b>%s</b>\n%b"
+vertical_alignment = center
+icon_position = off
+browser = /usr/bin/firefox
+
+[shortcuts]
+close = ctrl+space
+close_all = ctrl+shift+space
+history = ctrl+grave
+context = ctrl+shift+period
+
+[urgency_low]
+timeout = 10
+background = "#191724"
+foreground = "#e0def4"
+
+[urgency_normal]
+timeout = 10
+background = "#191724"
+foreground = "#e0def4"
+
+[urgency_critical]
+timeout = 0
+background = "#191724"
+foreground = "#e0def4"
+frame_color = "#eb6f92"

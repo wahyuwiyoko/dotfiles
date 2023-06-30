@@ -1,0 +1,45 @@
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.hintstyle: hintfull
+Xft.autohint: true
+
+XTerm*termName: xterm-256color
+XTerm*faceName: JetBrains Mono
+XTerm*faceSize: 12
+XTerm*highlightSelection: true
+XTerm*trimSelection: true
+XTerm*saveLines: 5000
+XTerm*utf8: 1
+XTerm*borderWidth: 0
+XTerm*metaSendsEscape: true
+
+! Rosé Pine palette
+! Source: https://github.com/rose-pine/xresources
+XTerm*background: #191724
+XTerm*foreground: #e0def4
+XTerm*cursorColor: #e0def4
+XTerm*color0: #1f1d2e
+XTerm*color1: #eb6f92
+XTerm*color2: #f6c177
+XTerm*color3: #ebbcba
+XTerm*color4: #31748f
+XTerm*color5: #c4a7e7
+XTerm*color6: #9ccfd8
+XTerm*color7: #6e6a86
+XTerm*color8: #26233a
+XTerm*color9: #eb6f92
+XTerm*color10: #f6c177
+XTerm*color11: #ebbcba
+XTerm*color12: #31748f
+XTerm*color13: #c4a7e7
+XTerm*color14: #9ccfd8
+XTerm*color15: #908caa
+
+! Custom key bindings
+XTerm*VT100.translations: #override \n\
+Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+Ctrl <Key>minus: smaller-vt-font() \n\
+Ctrl <Key>plus: larger-vt-font() \n\
+Alt <Key>o: exec-formatted("firefox '%t'", PRIMARY) select-start() select-end()
