@@ -2,20 +2,13 @@
 alias c="clear"
 alias la="ls -A"
 alias ll="ls -Al"
-alias ftclean="fc-cache -fv"
-alias searchfont="fc-list | grep"
-alias pyserver="python3 -m http.server"
 alias xcp="xclip -selection clipboard"
 alias pkgsearch="dpkg -l | grep"
-alias listgpg="gpg --list-secret-keys --keyid-format long"
 alias mergex="xrdb -merge ~/.Xresources"
+alias pyserver="python3 -m http.server --directory"
 
 # Miscellaneous
 alias myip="curl ifconfig.co/json"
-
-weather() {
-  curl "wttr.in/$*"
-}
 
 cheat() {
   curl "cheat.sh/$*"
@@ -27,11 +20,27 @@ alias mv="mv -i"
 alias rm="rm -i"
 
 # Navigation
-alias up="cd .."
-alias upp="cd ../.."
-alias up3="cd ../../.."
-alias up4="cd ../../../.."
-alias up5="cd ../../../../.."
+alias ..="cd .."
+alias ...="cd ../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
+alias .5="cd ../../../../.."
+
+# Font
+alias ftlist="fc-list : family style"
+alias ftclean="fc-cache -fv"
+alias ftsearch="fc-list | grep"
+
+# GPG
+alias gpglist="gpg --list-secret-keys --keyid-format long"
+
+gpgexppub() {
+  gpg --armor --output "$2.asc" --export "$1"
+}
+
+gpgexpsec() {
+  gpg --armor --output "$2.asc" --export-secret-keys "$1"
+}
 
 # yt-dlp
 alias yta-best="yt-dlp --extract-audio --audio-format best"
@@ -39,15 +48,15 @@ alias yta-mp3="yt-dlp --extract-audio --audio-format mp3"
 alias ytv-best="yt-dlp -f bestvideo+bestaudio"
 
 # Resource monitoring
-alias freemem="free -h"
-alias diskusage="df -h"
-alias psall="ps auxf"
+alias free="free -h"
+alias df="df -h"
+alias psa="ps auxf"
 alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
-alias memsort="ps auxf | sort -nr -k 4"
-alias cpusort="ps auxf | sort -nr -k 3"
+alias psmem="ps auxf | sort -nr -k 4"
+alias pscpu="ps auxf | sort -nr -k 3"
 alias dirsize="du -had 1 | sort -hr"
 
-# Network management
+# Network
 alias wifion="nmcli radio wifi on"
 alias wifioff="nmcli radio wifi off"
 alias wifilist="nmcli device wifi list"
