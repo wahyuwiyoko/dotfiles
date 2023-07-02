@@ -1,8 +1,9 @@
 Xft.antialias: true
 Xft.hinting: true
-Xft.rgba: rgb
-Xft.hintstyle: hintfull
 Xft.autohint: true
+Xft.hintstyle: hintfull
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
 
 XTerm*termName: xterm-256color
 XTerm*faceName: JetBrains Mono
