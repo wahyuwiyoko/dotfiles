@@ -3,15 +3,17 @@ alias c="clear"
 alias la="ls -A"
 alias ll="ls -Al"
 alias xcp="xclip -selection clipboard"
+alias cpimg="xclip -selection clipboard -t image/png -i"
 alias pkgsearch="dpkg -l | grep"
 alias mergex="xrdb -merge ~/.Xresources"
 alias pyserver="python3 -m http.server --directory"
+alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 
 # Miscellaneous
 alias myip="curl ifconfig.co/json"
 
 cheat() {
-  curl "cheat.sh/$*"
+  curl "cheat.sh/$1"
 }
 
 # File confirmation

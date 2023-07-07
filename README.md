@@ -23,14 +23,14 @@
 
 ## Details
 
-For more details how to setup and installing the packages,
+For more details how to set up and installing the packages,
 please read my post:
 [My Debian Setup with i3wm](https://wahyuwiyoko.github.io/blog/linux/my-debian-setup-with-i3wm/).
 
 Please note that in the i3 configs file, there are some configuration must be changed
 according to your hardware and applications you need.
 
-For example in `.config/i3/config` file, you may need to change this line:
+For example, in `.config/i3/config` file, you may need to change this line:
 
 ```
 exec xinput set-prop "HTIX5288:00 093A:0255 Touchpad" "libinput Tapping Enabled" 1

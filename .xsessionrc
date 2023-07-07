@@ -1,0 +1,18 @@
+# XDG base directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+# Dotfiles migration
+export HISTFILE="$XDG_STATE_HOME/bash/history"
+export LESSHISTFILE="$XDG_STATE_HOME/less/history"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
+export XCURSOR_PATH="/usr/share/icons:$XDG_DATA_HOME/icons"
+
+# General
+export PATH="$PATH:$HOME/go/bin"
+export EDITOR="nvim"
+export BROWSER="firefox --private-window"

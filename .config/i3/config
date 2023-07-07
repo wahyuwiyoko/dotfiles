@@ -2,13 +2,18 @@
 set $mod Mod1
 
 # Font for window titles
-font pango:DejaVu Sans 11
+font pango:Inter Medium 11
 
 # Use $mod+Mouse to drag floating windows
 floating_modifier $mod
 
 # Kill focused window
 bindsym $mod+Shift+q kill
+
+# Adjust volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pipewire -q sset Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pipewire -q sset Master 5%- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer -D pipewire -q sset Master toggle
 
 # Window style
 title_align center
@@ -27,12 +32,14 @@ exec --no-startup-id xset s off -dpms # Disable screen saver
 exec --no-startup-id picom -b
 
 # Key bindings for apps and system
-bindsym $mod+d exec --no-startup-id "dmenu_run -b -nf '#e0def4' -nb '#191724' -sb '#c4a7e7' -sf '#191724' -p 'dmenu'"
+bindsym $mod+d exec --no-startup-id dmenu_run -b -nf "#e0def4" -nb "#191724" -sb "#c4a7e7" -sf "#191724" -fn "JetBrains Mono:size=10" -p "dmenu"
 bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+Shift+x exec --no-startup-id "i3lock -c 191724; exec systemctl suspend"
+bindsym $mod+Shift+x exec --no-startup-id i3lock -c 191724; exec --no-startup-id systemctl suspend
 bindsym $mod+Shift+f exec --no-startup-id firefox
 bindsym $mod+Shift+p exec --no-startup-id firefox --private-window
-bindsym $mod+Shift+d exec --no-startup-id "killall dunst; exec notify-send 'Restart Dunst'"
+bindsym $mod+Shift+d exec --no-startup-id killall dunst; exec --no-startup-id notify-send "Restart Dunst"
+bindsym $mod+Shift+h exec --no-startup-id dunstctl history-pop
+bindsym $mod+c exec --no-startup-id dunstctl close
 bindsym Print exec --no-startup-id flameshot launcher
 
 # Change focused window
@@ -129,14 +136,14 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Exit i3 (log out X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit? This will end your X session.' -B 'Yes' 'i3-msg exit'"
+bindsym $mod+Shift+e exec i3-nagbar -t warning -m "Do you really want to exit? This will end your X session." -B "Yes" "i3-msg exit"
 
 # Touchpad controls
 exec --no-startup-id xinput set-prop "HTIX5288:00 093A:0255 Touchpad" "libinput Tapping Enabled" 1 # Enable tap-to-click
 
 # Screen brightness controls
-bindsym $mod+Delete exec --no-startup-id brightnessctl -q s +1% # Increase brightness
-bindsym $mod+BackSpace exec --no-startup-id brightnessctl -q s 1%- # Decrease brightness
+bindsym $mod+Delete exec --no-startup-id brightnessctl -q s +5% # Increase brightness
+bindsym $mod+BackSpace exec --no-startup-id brightnessctl -q s 5%- # Decrease brightness
 
 # Resize window
 bindsym $mod+r mode "resize"

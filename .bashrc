@@ -7,17 +7,8 @@ set -o noclobber
 shopt -s xpg_echo
 
 # Customize bash prompts
-arrow='\[\033[1;36m\]>\[\033[0m\] '
+PS1="\[\033[1;34m\]\w \[\033[1;36m\]>\[\033[0m\] "
+PS2="\[\033[1;36m\]>\[\033[0m\] "
 
-PS1="\[\033[1;34m\]\w $arrow"
-PS2=$arrow
-
-# Environment variables
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_STATE_HOME=$HOME/.local/state
-export PATH=$PATH:~/go/bin
-export EDITOR=nvim
-export BROWSER="firefox --private-window"
-export GPG_TTY=$(tty)
+# Environment variables for interactive login shell
+export GPG_TTY="$(tty)"
