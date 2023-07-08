@@ -1,11 +1,11 @@
 # General
 alias c="clear"
 alias la="ls -A"
-alias ll="ls -Al"
+alias ll="ls -Alh"
 alias xcp="xclip -selection clipboard"
 alias cpimg="xclip -selection clipboard -t image/png -i"
 alias pkgsearch="dpkg -l | grep"
-alias mergex="xrdb -merge ~/.Xresources"
+alias mergex="xrdb -merge $XDG_CONFIG_HOME/X11/xresources"
 alias pyserver="python3 -m http.server --directory"
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 
@@ -34,15 +34,9 @@ alias ftclean="fc-cache -fv"
 alias ftsearch="fc-list | grep"
 
 # GPG
-alias gpglist="gpg --list-secret-keys --keyid-format long"
-
-gpgexppub() {
-  gpg --armor --output "$2.asc" --export "$1"
-}
-
-gpgexpsec() {
-  gpg --armor --output "$2.asc" --export-secret-keys "$1"
-}
+alias gpglist="gpg --list-secret-keys --keyid-format=long"
+alias gpgexppub="gpg --export --armor --output public-key.asc"
+alias gpgexpsec="gpg --export-secret-keys --armor --output private-key.asc"
 
 # yt-dlp
 alias yta-best="yt-dlp --extract-audio --audio-format best"

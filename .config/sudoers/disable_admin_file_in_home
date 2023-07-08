@@ -1,0 +1,3 @@
+# Disable ~/.sudo_as_admin_successful file
+# Copy this file to /etc/sudoers.d/
+Defaults !admin_flag
