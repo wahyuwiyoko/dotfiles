@@ -8,12 +8,13 @@ alias pkgsearch="dpkg -l | grep"
 alias mergex="xrdb -merge $XDG_CONFIG_HOME/X11/xresources"
 alias pyserver="python3 -m http.server --directory"
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
+alias wmclass="xprop | grep WM_CLASS"
 
 # Miscellaneous
 alias myip="curl ifconfig.co/json"
 
 cheat() {
-  curl "cheat.sh/$1"
+  curl -L "cheat.sh/$1"
 }
 
 # File confirmation

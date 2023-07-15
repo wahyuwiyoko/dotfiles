@@ -5,19 +5,13 @@ horizontal_padding = 24
 frame_width = 3
 frame_color = "#524f67"
 separator_color = frame
-font = DejaVu Sans 11
+font = Inter 12
 line_height = 4
 markup = full
 format = "<b>%s</b>\n%b"
 vertical_alignment = center
 icon_position = off
 browser = /usr/bin/firefox
-
-[shortcuts]
-close = ctrl+space
-close_all = ctrl+shift+space
-history = ctrl+grave
-context = ctrl+shift+period
 
 [urgency_low]
 timeout = 10
