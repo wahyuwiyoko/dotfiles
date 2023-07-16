@@ -27,11 +27,6 @@ focus_follows_mouse no
 # Toggle window border
 bindsym $mod+t border toggle 
 
-# Autostart
-exec --no-startup-id xwallpaper --zoom ~/Pictures/Wallpapers/wallpaper.jpg
-exec --no-startup-id xset s off -dpms # Disable screen saver
-exec --no-startup-id picom -b
-
 # Key bindings for apps and system
 bindsym $mod+d exec --no-startup-id dmenu_run -b -nf "#e0def4" -nb "#191724" -sb "#c4a7e7" -sf "#191724" -fn "JetBrains Mono-10" -p "dmenu"
 bindsym $mod+Return exec --no-startup-id alacritty
@@ -138,9 +133,6 @@ bindsym $mod+Shift+r restart
 
 # Exit i3 (log out X session)
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m "Do you really want to exit? This will end your X session." -B "Yes" "i3-msg exit"
-
-# Touchpad controls
-exec --no-startup-id xinput set-prop "HTIX5288:00 093A:0255 Touchpad" "libinput Tapping Enabled" 1 # Enable tap-to-click
 
 # Screen brightness controls
 bindsym $mod+Delete exec --no-startup-id brightnessctl -q s +5% # Increase brightness

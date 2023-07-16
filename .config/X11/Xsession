@@ -1,4 +1,5 @@
 # Update the following values in /etc/X11/Xsession
 USRRESOURCES="$HOME/.config/X11/xresources"
-USERXSESSIONRC="$HOME/.cache/X11/xsessionrc"
+USERXSESSION="$HOME/.config/X11/xsession"
+USERXSESSIONRC="$HOME/.config/X11/xsessionrc"
 ERRFILE="$HOME/.cache/X11/xsession-errors"

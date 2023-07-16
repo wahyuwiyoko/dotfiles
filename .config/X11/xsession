@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Set wallpaper
+xwallpaper --zoom $HOME/Pictures/Wallpapers/
+
+# Enable compositor
+picom -b
+
+# Disable screen saver
+xset s off -dpms
+
+# Enable tap-to-click
+xinput set-prop "HTIX5288:00 093A:0255 Touchpad" "libinput Tapping Enabled" 1
+
+# Execute window manager
+exec i3
