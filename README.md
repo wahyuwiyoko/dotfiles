@@ -3,7 +3,6 @@
 ## Systems
 
 - Distribution: Debian Bookworm
-- Display manager: LightDM
 - Shell: Bash
 - Window manager: i3
 - Status bar: i3status
@@ -27,27 +26,20 @@ For more details how to set up and installing the packages,
 please read my post:
 [My Debian Setup with i3wm](https://wahyuwiyoko.github.io/blog/linux/my-debian-setup-with-i3wm/).
 
-Please note that in the i3 configs file, there are some configuration must be changed
+Please note that there are some configuration must be changed
 according to your hardware and applications you need.
 
-For example, in `.config/i3/config` file, you may need to change this line:
+For example, in `~/.config/i3/config` file, you may need to add these line to enable
+touchpad tap-to-click functionality if you are using a display manager:
 
 ```
-exec xinput set-prop "HTIX5288:00 093A:0255 Touchpad" "libinput Tapping Enabled" 1
+exec xinput set-prop "<your touchpad device>" "libinput Tapping Enabled" 1
 ```
 
-Which you can read my post on
-[how to enable touchpad tap-to-click](https://wahyuwiyoko.github.io/blog/linux/enable-touchpad-tap-to-click/).
+Also it is the same as if you want to start X manually using `startx` instead
+of using display manager by modifying the `~/.config/X11/xsession` file and
+add `xinput` configuration before execute the window manager.
 
-In `.config/i3status/config` file, you also need to change the network device name:
-
-```
-order += "wireless _first_"
-
-wireless _first_ {
-  ...
-}
-```
-
-To know which network device available on your system,
-just enter `nmcli device status` command on terminal.
+Beside of that, you can read my post on
+[how to enable touchpad tap-to-click](https://wahyuwiyoko.github.io/blog/linux/enable-touchpad-tap-to-click/)
+for more detail about how to enable it.

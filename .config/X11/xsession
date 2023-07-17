@@ -1,15 +1,21 @@
 #!/bin/sh
 
+# Load X resources
+xrdb -load $HOME/.config/X11/xresources
+
 # Set wallpaper
 xwallpaper --zoom $HOME/Pictures/Wallpapers/
 
 # Enable compositor
-picom -b
+picom &
+
+# Hide the X11 mouse cursor when a key is pressed
+xbanish &
 
 # Disable screen saver
 xset s off -dpms
 
-# Enable tap-to-click
+# Enable touchpad tap-to-click
 xinput set-prop "HTIX5288:00 093A:0255 Touchpad" "libinput Tapping Enabled" 1
 
 # Execute window manager

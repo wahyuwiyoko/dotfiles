@@ -10,26 +10,23 @@ env:
   TERM: xterm-256color
 
 window:
-  # Window dimensions (changes require restart)
-  #
+  # Window dimensions (changes require restart).
   # Number of lines/columns (not pixels) in the terminal. Both lines and columns
   # must be non-zero for this to take effect. The number of columns must be at
   # least `2`, while using a value of `0` for columns and lines will fall back
-  # to the window manager's recommended size
+  # to the window manager's recommended size.
   dimensions:
     columns: 0
     lines: 0
 
-  # Window position (changes require restart)
-  #
+  # Window position (changes require restart).
   # Specified in number of pixels.
   # If the position is not set, the window manager will handle the placement.
   position:
     x: 0
     y: 0
 
-  # Window padding (changes require restart)
-  #
+  # Window padding (changes require restart).
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
@@ -49,28 +46,21 @@ window:
   opacity: 1.0
 
   # Startup Mode (changes require restart)
-  #
   # Values for `startup_mode`:
   #   - Windowed
   #   - Maximized
   #   - Fullscreen
   startup_mode: Windowed
 
-  # Window title
   title: Alacritty
 
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: false
 
-  # Window class
   class:
-    # Application instance name
     instance: Alacritty
-    # General application class
     general: Alacritty
 
-  # Decorations theme variant
-  #
   # Override the variant of the GTK theme/Wayland client side decorations.
   # Commonly supported values are `dark` and `light`. Set this to `None` to use
   # the default theme variant.
@@ -118,7 +108,6 @@ font:
     y: 0
 
   # Use built-in font for box drawing characters.
-  #
   # If `true`, Alacritty will use a custom built-in font for box drawing
   # characters (Unicode points 2500 - 259f).
   builtin_box_drawing: true
@@ -167,21 +156,15 @@ colors:
       foreground: "#6e6a86"
       background: "#1f1d2e"
 
-  # Line indicator
-  #
   # Color used for the indicator displaying the position in history during
   # search and vi mode.
-  #
   # By default, these will use the opposing primary color.
   line_indicator:
     foreground: None
     background: None
 
-  # Footer bar
-  #
   # Color used for the footer bar on the bottom, used by search regex input,
   # hyperlink URI preview, etc.
-  #
   footer_bar:
     background: "#e0def4"
     foreground: "#1f1d2e"
@@ -223,8 +206,7 @@ colors:
     cyan:    "#ebbcba"
     white:   "#e0def4"
 
-  # Indexed Colors
-  #
+  # Indexed Colors.
   # The indexed colors include all colors from 16 to 256.
   # When these are not set, they're filled with sensible defaults.
   #
@@ -233,8 +215,7 @@ colors:
   #
   #indexed_colors: []
 
-  # Transparent cell backgrounds
-  #
+  # Transparent cell backgrounds.
   # Whether or not `window.opacity` applies to all cell backgrounds or only to
   # the default background. When set to `true` all cells will be transparent
   # regardless of their background color.
@@ -242,10 +223,7 @@ colors:
 
 # The bell is rung every time the BEL control character is received.
 #bell:
-  # Visual Bell Animation
-  #
   # Animation effect for flashing the screen when the visual bell is rung.
-  #
   # Values for `animation`:
   #   - Ease
   #   - EaseOut
@@ -263,15 +241,10 @@ colors:
   # disable the visual bell animation.
   #duration: 0
 
-  # Visual bell animation color.
   #color: '#ffffff'
 
-  # Bell Command
-  #
   # This program is executed whenever the bell is rung.
-  #
   # When set to `command: None`, no command will be executed.
-  #
   # Example:
   #   command:
   #     program: notify-send
@@ -302,11 +275,9 @@ cursor:
     #   - Always: Force the cursor to always blink
     blinking: Off
 
-  # Vi mode cursor style
-  #
+  # Vi mode cursor style.
   # If the vi mode cursor style is `None` or not specified, it will fall back to
   # the style of the active value of the normal cursor.
-  #
   # See `cursor.style` for available options.
   #vi_mode_style: None
 
@@ -314,7 +285,6 @@ cursor:
   #blink_interval: 750
 
   # Time after which cursor stops blinking, in seconds.
-  #
   # Specifying '0' will disable timeout for blinking.
   #blink_timeout: 5
 
@@ -341,7 +311,7 @@ shell:
 # Send ESC (\x1b) before characters when alt is pressed.
 #alt_send_esc: true
 
-# Offer IPC using `alacritty msg` (unix only)
+# Offer IPC using `alacritty msg` (unix only).
 #ipc_socket: true
 
 mouse:
@@ -351,7 +321,6 @@ mouse:
   #double_click: { threshold: 300 }
   #triple_click: { threshold: 300 }
 
-  # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: true
 
 # Terminal hints can be used to find text or hyperlink in the visible part of
@@ -360,8 +329,7 @@ mouse:
   # Keys used for the hint labels.
   #alphabet: "jfkdls;ahgurieowpq"
 
-  # List with all available hints
-  #
+  # List with all available hints.
   # Each hint must have any of `regex` or `hyperlinks` field and either an
   # `action` or a `command` field. The fields `mouse`, `binding` and
   # `post_processing` are optional.
@@ -410,7 +378,6 @@ mouse:
 # requirement.
 #
 # Each mouse binding will specify a:
-#
 # - `mouse`:
 #
 #   - Middle
@@ -439,7 +406,6 @@ mouse:
 # `- { key: V, mods: Control|Shift, action: Paste }`
 #
 # Each key binding will specify a:
-#
 # - `key`: Identifier of the key pressed
 #
 #    - A-Z
@@ -508,7 +474,6 @@ mouse:
 #   - None
 #
 # - Vi mode exclusive actions:
-#
 #   - Open
 #       Perform the action of the first matching hint under the vi mode cursor
 #       with `mouse.enabled` set to `true`.
@@ -521,7 +486,6 @@ mouse:
 #       Center view around vi mode cursor
 #
 # - Vi mode exclusive cursor motion actions:
-#
 #   - Up
 #       One line up.
 #   - Down
@@ -587,22 +551,18 @@ mouse:
 #       Go to the next regex in the search history.
 #
 # - Linux/BSD exclusive actions:
-#
 #   - CopySelection
 #       Copy from the selection buffer.
 #   - PasteSelection
 #       Paste from the selection buffer.
 #
 # - `command`: Fork and execute a specified command plus arguments
-#
 #    The `command` field must be a map containing a `program` string and an
 #    `args` array of command line parameter strings. For example:
 #       `{ program: "alacritty", args: ["-e", "vttest"] }`
 #
 # And optionally:
-#
 # - `mods`: Key modifiers to filter binding actions
-#
 #    - Command
 #    - Control
 #    - Option
@@ -720,25 +680,3 @@ key_bindings:
   - { key: NumpadAdd,      mods: Control,                         action: IncreaseFontSize }
   - { key: Minus,          mods: Control,                         action: DecreaseFontSize }
   - { key: NumpadSubtract, mods: Control,                         action: DecreaseFontSize }
-
-#debug:
-  # Display the time it takes to redraw each frame.
-  #render_timer: false
-
-  # Keep the log file after quitting Alacritty.
-  #persistent_logging: false
-
-  # Values for `log_level`:
-  #   - Off
-  #   - Error
-  #   - Warn
-  #   - Info
-  #   - Debug
-  #   - Trace
-  #log_level: Warn
-
-  # Print all received window events.
-  #print_events: false
-
-  # Highlight window damage information.
-  #highlight_damage: false

@@ -9,6 +9,8 @@ alias mergex="xrdb -merge $XDG_CONFIG_HOME/X11/xresources"
 alias pyserver="python3 -m http.server --directory"
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 alias wmclass="xprop | grep WM_CLASS"
+alias wmrole="xprop | grep WM_WINDOW_ROLE"
+alias drivers="grep drivers $XDG_DATA_HOME/xorg/Xorg.0.log"
 
 # Miscellaneous
 alias myip="curl ifconfig.co/json"
@@ -47,10 +49,10 @@ alias ytv-best="yt-dlp -f bestvideo+bestaudio"
 # Resource monitoring
 alias free="free -h"
 alias df="df -h"
-alias psa="ps auxf"
+alias psa="ps auxf | less"
 alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
-alias psmem="ps auxf | sort -nr -k 4"
-alias pscpu="ps auxf | sort -nr -k 3"
+alias psmem="ps auxf | sort -nr -k 4 | less"
+alias pscpu="ps auxf | sort -nr -k 3 | less"
 alias dirsize="du -had 1 | sort -hr"
 
 # Network

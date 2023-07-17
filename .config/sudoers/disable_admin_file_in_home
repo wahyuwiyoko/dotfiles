@@ -1,3 +1,3 @@
-# This file is used to disable the ~/.sudo_as_admin_successful file.
-# Copy this file to /etc/sudoers.d/ directory.
+# This file is used to disable the ~/.sudo_as_admin_successful file
+# Copy this file to /etc/sudoers.d/ directory
 Defaults !admin_flag
