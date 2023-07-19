@@ -33,7 +33,7 @@ For example, in `~/.config/i3/config` file, you may need to add these line to en
 touchpad tap-to-click functionality if you are using a display manager:
 
 ```
-exec xinput set-prop "<your touchpad device>" "libinput Tapping Enabled" 1
+exec --no-startup-id xinput set-prop "<your touchpad device>" "libinput Tapping Enabled" 1
 ```
 
 Also it is the same as if you want to start X manually using `startx` instead

@@ -7,6 +7,10 @@ font pango:Inter Medium 11
 # Use $mod+Mouse to drag floating windows
 floating_modifier $mod
 
+# Floating windows size
+floating_minimum_size 400 x 400
+floating_maximum_size 700 x 700
+
 # Kill focused window
 bindsym $mod+Shift+q kill
 
@@ -15,33 +19,55 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pipewire -q sset Mas
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pipewire -q sset Master 5%- unmute
 bindsym XF86AudioMute exec --no-startup-id amixer -D pipewire -q sset Master toggle
 
+# Media player controls
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
 # Window style
 title_align center
 hide_edge_borders both
 default_border pixel 3
 default_floating_border pixel 3
 popup_during_fullscreen smart
-gaps inner 7px
+gaps inner 10
+gaps outer 5
+smart_borders on
+force_display_urgency_hint 5000 ms
 focus_follows_mouse no
 
 # Toggle window border
-bindsym $mod+t border toggle 
+bindsym $mod+b border toggle
 
-# Key bindings for apps and system
-bindsym $mod+d exec --no-startup-id dmenu_run -b -nf "#e0def4" -nb "#191724" -sb "#c4a7e7" -sf "#191724" -fn "JetBrains Mono-10" -p "dmenu"
+# Move tiling windows via drag & drop by modifier and left-clicking
+tiling_drag modifier titlebar
+
+# dmenu
+bindsym $mod+d exec --no-startup-id dmenu_run -b -nf "#e0def4" -nb "#191724" \
+-sb "#c4a7e7" -sf "#191724" -fn "JetBrains Mono-10" -p "dmenu"
+
+# Terminal
 bindsym $mod+Return exec --no-startup-id alacritty
+
+# Browser
 bindsym $mod+Shift+f exec --no-startup-id firefox
 bindsym $mod+Shift+p exec --no-startup-id firefox --private-window
-bindsym $mod+Shift+d exec --no-startup-id killall dunst; exec --no-startup-id notify-send "Restart Dunst"
-bindsym $mod+Shift+h exec --no-startup-id dunstctl history-pop
-bindsym $mod+c exec --no-startup-id dunstctl close
+
+# Dunst
+bindsym $mod+Shift+d exec --no-startup-id killall dunst; \
+exec --no-startup-id dunst &; exec --no-startup-id notify-send "Restart Dunst"
+bindsym Ctrl+BackSpace exec --no-startup-id dunstctl history-pop
+bindsym Ctrl+space exec --no-startup-id dunstctl close
+bindsym $mod+x exec --no-startup-id dunstctl close-all
+
+# Screenshoter
 bindsym Print exec --no-startup-id flameshot launcher
 
 # Change focused window
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # Alternatively, can use the cursor keys
 bindsym $mod+Left focus left
@@ -50,10 +76,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # Move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # Alternatively, can use the cursor keys
 bindsym $mod+Shift+Left move left
@@ -62,21 +88,18 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # Splitting containers
-bindsym $mod+h split horizontal; exec --no-startup-id notify-send "Split horizontally"
-bindsym $mod+v split vertical; exec --no-startup-id notify-send "Split vertically"
+bindsym $mod+s split toggle
 
 # Enter fullscreen mode for focused container
-bindsym $mod+f fullscreen toggle
+bindsym F11 fullscreen toggle
 
 # Change container layout
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+w layout toggle
 
-# Toggle tiling / floating
+# Toggle tiling or floating
 bindsym $mod+Shift+space floating toggle
 
-# Change focus between tiling / floating windows
+# Change focus between tiling or floating windows
 bindsym $mod+space focus mode_toggle
 
 # Move the currently focused window to the scratchpad
@@ -85,8 +108,9 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-# Focus the parent container
-bindsym $mod+a focus parent
+# Focus the parent or child container
+bindsym $mod+p focus parent
+bindsym $mod+c focus child
 
 # Names for default workspaces
 set $ws1 "1"
@@ -138,10 +162,10 @@ bindsym $mod+BackSpace exec --no-startup-id brightnessctl -q s 5%- # Decrease br
 bindsym $mod+r mode "resize"
 
 mode "resize" {
-  bindsym j resize shrink width 10 px or 10 ppt
-  bindsym k resize grow height 10 px or 10 ppt
-  bindsym l resize shrink height 10 px or 10 ppt
-  bindsym semicolon resize grow width 10 px or 10 ppt
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
 
   # Same bindings, but for the arrow keys
   bindsym Left resize shrink width 10 px or 10 ppt
@@ -150,27 +174,23 @@ mode "resize" {
   bindsym Right resize grow width 10 px or 10 ppt
 
   # Back to normal
-  bindsym Return mode "default"
   bindsym Escape mode "default"
-  bindsym $mod+r mode "default"
 }
 
 # System mode
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system System: (l)ogout, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff
 set $lock i3lock -c 191724
 
 bindsym $mod+Shift+e mode "$mode_system"
 
 mode "$mode_system" {
-  bindsym l exec --no-startup-id $lock, mode "default"
-  bindsym e exec --no-startup-id i3-msg exit, mode "default"
-  bindsym s exec --no-startup-id $lock && systemctl suspend, mode "default"
-  bindsym h exec --no-startup-id $lock && systemctl hibernate, mode "default"
+  bindsym l exec --no-startup-id loginctl terminate-user $USER, mode "default"
+  bindsym s exec --no-startup-id systemctl suspend && $lock, mode "default"
+  bindsym h exec --no-startup-id systemctl hibernate && $lock, mode "default"
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
-  bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
+  bindsym p exec --no-startup-id systemctl poweroff, mode "default"
 
   # Back to normal
-  bindsym Return mode "default"
   bindsym Escape mode "default"
 }
 
@@ -211,14 +231,15 @@ bar {
   tray_output none
   font pango:JetBrains Mono 11
   separator_symbol " | "
-  padding 1px
+  padding 3px 10px 3px 0
+  workspace_min_width 25
 
   colors {
     background $base
     statusline $text
     separator  $highlight
 
-    # Class            Border   Bground Text
+    # Class            Border   Bground  Text
     focused_workspace  $iris    $iris    $base
     active_workspace   $iris    $iris    $base
     inactive_workspace $overlay $overlay $text
@@ -227,10 +248,10 @@ bar {
   }
 }
 
-# Class                 Border     Background Text  Indicator  Child Border
-client.focused          $iris      $highlight $text $iris      $iris
-client.focused_inactive $iris      $highlight $text $iris      $iris
-client.unfocused        $surface   $surface   $text $surface   $surface
-client.urgent           $love      $highlight $text $love      $love
-client.placeholder      $highlight $highlight $text $highlight $highlight
+# Class                 Border   Bground  Text  Indicator Child_border
+client.focused          $iris    $iris    $base $iris     $iris
+client.focused_inactive $surface $surface $text $surface  $surface
+client.unfocused        $surface $surface $text $surface  $surface
+client.urgent           $love    $love    $base $love     $love
+client.placeholder      $base    $base    $text $base     $base
 client.background       $base

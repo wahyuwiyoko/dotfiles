@@ -1,30 +1,45 @@
 [global]
-geometry = "300x50-20+35"
-padding = 16
-horizontal_padding = 24
+width = 300
+height = 150
+origin = top-right
+offset = 10x50
+notification_limit = 0
+indicate_hidden = yes
+padding = 10
+horizontal_padding = 12
 frame_width = 3
 frame_color = "#524f67"
+gap_size = 10
 separator_color = frame
-font = Inter 12
+sort = yes
+idle_threshold = 120
+font = Inter 11
 line_height = 4
 markup = full
 format = "<b>%s</b>\n%b"
+alignment = left
 vertical_alignment = center
+ellipsize = end
+ignore_newline = no
+stack_duplicates = true
+show_indicators = yes
 icon_position = off
-browser = /usr/bin/firefox
+sticky_history = yes
+history_length = 20
+corner_radius = 10
 
 [urgency_low]
-timeout = 10
 background = "#191724"
 foreground = "#e0def4"
+timeout = 10
 
 [urgency_normal]
-timeout = 10
 background = "#191724"
 foreground = "#e0def4"
+timeout = 10
 
 [urgency_critical]
-timeout = 0
 background = "#191724"
 foreground = "#e0def4"
 frame_color = "#eb6f92"
+timeout = 0

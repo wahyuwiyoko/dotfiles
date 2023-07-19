@@ -1,16 +1,19 @@
 # General
 alias c="clear"
 alias la="ls -A"
-alias ll="ls -Alh"
+alias ll="ls -lAh"
 alias xcp="xclip -selection clipboard"
 alias cpimg="xclip -selection clipboard -t image/png -i"
 alias pkgsearch="dpkg -l | grep"
+alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
+
+# Environment
 alias mergex="xrdb -merge $XDG_CONFIG_HOME/X11/xresources"
 alias pyserver="python3 -m http.server --directory"
-alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
-alias wmclass="xprop | grep WM_CLASS"
-alias wmrole="xprop | grep WM_WINDOW_ROLE"
+alias xpropc="xprop | grep WM_CLASS"
+alias xpropr="xprop | grep WM_WINDOW_ROLE"
 alias drivers="grep drivers $XDG_DATA_HOME/xorg/Xorg.0.log"
+alias keybind="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
 
 # Miscellaneous
 alias myip="curl ifconfig.co/json"
@@ -75,6 +78,7 @@ alias allservices="systemctl list-units --type service"
 alias fileservices="systemctl list-units-files --type service"
 alias bootlogs="journalctl --boot"
 alias criticallogs="sudo journalctl -p 3 -xb"
+alias sessionst="loginctl session-status"
 
 # Archive extraction
 ex () {

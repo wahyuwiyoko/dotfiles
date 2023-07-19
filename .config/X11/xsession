@@ -9,6 +9,9 @@ xwallpaper --zoom $HOME/Pictures/Wallpapers/
 # Enable compositor
 picom &
 
+# Start Dunst
+dunst &
+
 # Hide the X11 mouse cursor when a key is pressed
 xbanish &
 
