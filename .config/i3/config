@@ -7,10 +7,6 @@ font pango:Inter Medium 11
 # Use $mod+Mouse to drag floating windows
 floating_modifier $mod
 
-# Floating windows size
-floating_minimum_size 400 x 400
-floating_maximum_size 700 x 700
-
 # Kill focused window
 bindsym $mod+Shift+q kill
 
@@ -43,8 +39,10 @@ bindsym $mod+b border toggle
 tiling_drag modifier titlebar
 
 # dmenu
-bindsym $mod+d exec --no-startup-id dmenu_run -b -nf "#e0def4" -nb "#191724" \
--sb "#c4a7e7" -sf "#191724" -fn "JetBrains Mono-10" -p "dmenu"
+set $dmenu "dmenu -i -b -nf '#e0def4' -nb '#191724' -sb '#c4a7e7' \
+-sf '#191724' -fn 'JetBrains Mono-10' -p 'dmenu'"
+
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu=$dmenu
 
 # Terminal
 bindsym $mod+Return exec --no-startup-id alacritty
@@ -155,8 +153,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Screen brightness controls
-bindsym $mod+Delete exec --no-startup-id brightnessctl -q s +5% # Increase brightness
-bindsym $mod+BackSpace exec --no-startup-id brightnessctl -q s 5%- # Decrease brightness
+bindsym $mod+Delete exec --no-startup-id brightnessctl -q s +1%
+bindsym $mod+BackSpace exec --no-startup-id brightnessctl -q s 1%-
 
 # Resize window
 bindsym $mod+r mode "resize"

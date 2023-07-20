@@ -1,0 +1,10 @@
+[Default Applications]
+application/json=nvim.desktop
+application/pdf=org.pwmt.zathura.desktop
+application/x-shellscript=nvim.desktop
+image/png=nsxiv.desktop
+image/jpeg=nsxiv.desktop
+inode/directory=nnn.desktop
+text/plain=nvim.desktop
+text/html=nvim.desktop
+video/mp4=mpv.desktop

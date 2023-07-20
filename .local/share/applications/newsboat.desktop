@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Newsboat
+GenericName=RSS/Atom Feed Reader
+Exec=newsboat
+Terminal=true

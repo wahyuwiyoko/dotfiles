@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=C* Music Player
+GenericName=Music Player
+Exec=cmus
+Terminal=true

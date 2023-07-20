@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=nnn
+GenericName=Terminal File Manager
+Exec=nnn
+Terminal=true

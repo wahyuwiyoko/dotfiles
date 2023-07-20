@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Neovim
+GenericName=Text Editor
+Exec=nvim %F
+Terminal=true

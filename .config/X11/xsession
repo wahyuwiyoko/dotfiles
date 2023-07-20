@@ -6,9 +6,6 @@ xrdb -load $HOME/.config/X11/xresources
 # Set wallpaper
 xwallpaper --zoom $HOME/Pictures/Wallpapers/
 
-# Enable compositor
-picom &
-
 # Start Dunst
 dunst &
 
