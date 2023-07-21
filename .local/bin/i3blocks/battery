@@ -1,0 +1,12 @@
+#!/bin/bash
+
+status=$(cat /sys/class/power_supply/BAT0/status)
+percentage=$(cat /sys/class/power_supply/BAT0/capacity)
+
+if [[ $status == "Charging" ]]; then
+  label="CHR"
+elif [[ $status == "Discharging" ]]; then
+  label="BAT"
+fi
+
+echo "<span bgcolor='#c4a7e7'> $label $percentage% </span>"

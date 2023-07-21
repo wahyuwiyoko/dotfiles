@@ -1,0 +1,17 @@
+command=$HOME/.local/bin/i3blocks/$BLOCK_NAME
+align=center
+color=#191724
+separator_block_width=15
+markup=pango
+separator=false
+interval=5
+
+[wifi]
+
+[volume]
+
+[brightness]
+
+[battery]
+
+[time]

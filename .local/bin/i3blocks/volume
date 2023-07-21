@@ -1,0 +1,14 @@
+#!/bin/bash
+
+output=$(amixer -D pipewire sget Master | grep "Left:")
+
+volume=$(echo $output | awk -F "[][]" '{ print $2 }')
+status=$(echo $output | awk -F "[][]" '{ print $4 }')
+
+if [[ $status == "off" ]]; then
+  label="MUTED"
+elif [[ $status == "on" ]]; then
+  label="VOL $volume"
+fi
+
+echo "<span bgcolor='#c4a7e7'> $label </span>"
