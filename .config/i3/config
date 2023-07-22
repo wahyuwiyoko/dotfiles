@@ -67,23 +67,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# Alternatively, can use the cursor keys
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # Move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# Alternatively, can use the cursor keys
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # Splitting containers
 bindsym $mod+s split toggle
@@ -165,12 +153,6 @@ mode "resize" {
   bindsym k resize shrink height 10 px or 10 ppt
   bindsym l resize grow width 10 px or 10 ppt
 
-  # Same bindings, but for the arrow keys
-  bindsym Left resize shrink width 10 px or 10 ppt
-  bindsym Down resize grow height 10 px or 10 ppt
-  bindsym Up resize shrink height 10 px or 10 ppt
-  bindsym Right resize grow width 10 px or 10 ppt
-
   # Back to normal
   bindsym Escape mode "default"
 }
@@ -224,11 +206,11 @@ set $highlight #524f67
 
 # Start i3bar to display a workspace bar
 bar {
-  status_command i3status
+  status_command i3blocks
   position top
   tray_output none
   font pango:JetBrains Mono 11
-  separator_symbol " | "
+  # separator_symbol " | "
   padding 3px 10px 3px 0
   workspace_min_width 25
 
