@@ -4,10 +4,11 @@ Xft.autohint: true
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
+Xft.dpi: 96
 
 XTerm*termName: xterm-256color
 XTerm*faceName: JetBrains Mono
-XTerm*faceSize: 12
+XTerm*faceSize: 10
 XTerm*highlightSelection: true
 XTerm*trimSelection: true
 XTerm*saveLines: 5000

@@ -16,7 +16,7 @@
 - Terminal: Alacritty
 - Application launcher: dmenu
 - Firewall manager: UFW
-- Wallpaper switcher: xwallpaper
+- Wallpaper switcher: hsetroot
 - Text editor: Neovim
 - Image viewer: nsxiv
 
