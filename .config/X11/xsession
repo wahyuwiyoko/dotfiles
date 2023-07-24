@@ -12,17 +12,20 @@ dunst &
 # Hide the X11 mouse cursor when a key is pressed
 xbanish &
 
+# Start xsettings daemon
+xsettingsd &
+
 # Disable screen saver
 xset s off -dpms
 
 # Change the pointer cursor
 xsetroot -cursor_name left_ptr
 
-# Enable touchpad tap-to-click
-xinput set-prop "HTIX5288:00 093A:0255 Touchpad" "libinput Tapping Enabled" 1
-
 # Adjust sound mixer
 amixer -c 0 sset Headphone 100%+ unmute -q
+
+# Set minimum brightness
+light -N 1%
 
 # Execute window manager
 exec i3

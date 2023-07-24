@@ -9,7 +9,7 @@
 - Network manager: NetworkManager
 - Notification daemon: Dunst
 - Screen locker: i3lock
-- Brightness manager: brightnessctl
+- Backlight controller: light
 
 ## Software
 
