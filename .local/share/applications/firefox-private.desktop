@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Firefox Private Window
+GenericName=Web Browser
+Exec=firefox --private-window %u
+Terminal=false

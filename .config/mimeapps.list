@@ -2,9 +2,13 @@
 application/json=nvim.desktop
 application/pdf=org.pwmt.zathura.desktop
 application/x-shellscript=nvim.desktop
-image/png=nsxiv.desktop
 image/jpeg=nsxiv.desktop
+image/png=nsxiv.desktop
 inode/directory=nnn.desktop
-text/plain=nvim.desktop
 text/html=nvim.desktop
+text/plain=nvim.desktop
 video/mp4=mpv.desktop
+x-scheme-handler/about=firefox-private.desktop
+x-scheme-handler/http=firefox-private.desktop
+x-scheme-handler/https=firefox-private.desktop
+x-scheme-handler/unknown=firefox-private.desktop
