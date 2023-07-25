@@ -141,8 +141,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Screen brightness controls
-bindsym $mod+Delete exec --no-startup-id brightnessctl -q s +1%
-bindsym $mod+BackSpace exec --no-startup-id brightnessctl -q s 1%-
+bindsym $mod+Delete exec --no-startup-id light -A 1
+bindsym $mod+BackSpace exec --no-startup-id light -U 1
 
 # Resize window
 bindsym $mod+r mode "resize"

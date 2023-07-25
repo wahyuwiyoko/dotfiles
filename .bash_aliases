@@ -2,6 +2,8 @@
 alias c="clear"
 alias la="ls -A"
 alias ll="ls -lAh"
+alias mkdir="mkdir -pv"
+alias rmdir="rmdir -pv"
 alias xcp="xclip -selection clipboard"
 alias cpimg="xclip -selection clipboard -t image/png -i"
 alias pkgsearch="dpkg -l | grep"
@@ -23,9 +25,9 @@ cheat() {
 }
 
 # File confirmation
-alias cp="cp -i"
-alias mv="mv -i"
-alias rm="rm -i"
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -Iv"
 
 # Navigation
 alias ..="cd .."

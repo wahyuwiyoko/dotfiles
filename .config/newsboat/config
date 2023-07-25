@@ -1,0 +1,33 @@
+browser "$BROWSER %u"
+confirm-exit yes
+show-keymap-hint no
+show-title-bar no
+
+bind-key h quit
+bind-key j down
+bind-key k up
+bind-key l open
+
+bind-key L next-feed
+bind-key H prev-feed
+
+bind-key g home
+bind-key G end
+
+bind-key a toggle-article-read
+bind-key c toggle-show-read-feeds
+
+color background         yellow  default
+color listnormal         white   default
+color listnormal_unread  white   default
+color listfocus          black   cyan
+color listfocus_unread   black   cyan
+color info               black   cyan
+color article            white   default
+
+highlight article "^(Feed|Link):.*$" white default bold
+highlight article "^(Title|Date|Author):.*$" white default bold
+highlight article "https?://[^ ]+" magenta default underline
+highlight article "\\[[0-9]+\\]" blue default bold
+highlight article "\\[image\\ [0-9]+\\]" blue default bold
+highlight feedlist "^─.*$" blue default bold

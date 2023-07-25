@@ -24,8 +24,5 @@ xsetroot -cursor_name left_ptr
 # Adjust sound mixer
 amixer -c 0 sset Headphone 100%+ unmute -q
 
-# Set minimum brightness
-light -N 1%
-
 # Execute window manager
 exec i3

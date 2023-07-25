@@ -12,4 +12,3 @@ PS2="\[\033[1;36m\]>\[\033[0m\] "
 
 # Environment variables for interactive login shell
 export GPG_TTY="$(tty)"
-export PATH="$PATH:$HOME/.local/bin:$GOPATH/bin"

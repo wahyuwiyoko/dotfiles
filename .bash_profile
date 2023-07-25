@@ -1,5 +1,5 @@
 if [[ -f $HOME/.bashrc ]]; then
-  . $HOME/.bashrc
+  source $HOME/.bashrc
 fi
 
 if [[ ! $DISPLAY && $XDG_VTNR == 1 ]]; then
