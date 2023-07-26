@@ -4,8 +4,8 @@
 
 - Distribution: Debian Bookworm
 - Shell: Bash
-- Window manager: i3
-- Status bar: i3blocks
+- Window manager: i3 & bspwm
+- Status bar: i3blocks & Polybar
 - Network manager: NetworkManager
 - Notification daemon: Dunst
 - Screen locker: i3lock
