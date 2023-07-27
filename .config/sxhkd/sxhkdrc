@@ -19,8 +19,8 @@ super + {Delete,BackSpace}
   light {-A 1,-U 1}
 
 # Screenshoter
-@Print
-  flameshot launcher
+super + {_,shift,ctrl} + @Print
+  screenshot {_,select,window}
 
 # Adjust volume
 XF86Audio{RaiseVolume,LowerVolume,Mute}
