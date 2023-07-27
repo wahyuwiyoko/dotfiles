@@ -14,7 +14,7 @@
 ## Software
 
 - Terminal: Alacritty
-- Application launcher: dmenu
+- Application launcher: Rofi
 - Firewall manager: UFW
 - Wallpaper switcher: hsetroot
 - Text editor: Neovim
@@ -43,3 +43,12 @@ add `xinput` configuration before execute the window manager.
 Beside of that, you can read my post on
 [how to enable touchpad tap-to-click](https://wahyuwiyoko.github.io/blog/linux/enable-touchpad-tap-to-click/)
 for more detail about how to enable it.
+
+## Special Thanks
+
+- [Addy](https://github.com/addy-dclxvi)
+- [Derek Taylor](https://gitlab.com/dwt1)
+- [drewgrif](https://github.com/drewgrif)
+- [Eric Murphy](https://github.com/ericmurphyxyz)
+- [Ilham](https://github.com/ilhamisbored)
+- [Rosé Pine](https://rosepinetheme.com/)

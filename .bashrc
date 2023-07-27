@@ -6,6 +6,9 @@ set -o noclobber
 # Enable escape character on echo command
 shopt -s xpg_echo
 
+# Disable ctrl+s & ctrl+q (used to pause terminal input)
+stty -ixon
+
 # Customize bash prompts
 PS1="\[\033[1;34m\]\w \[\033[1;36m\]>\[\033[0m\] "
 PS2="\[\033[1;36m\]>\[\033[0m\] "

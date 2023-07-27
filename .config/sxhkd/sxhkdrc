@@ -4,7 +4,7 @@ super + {_,shift + } Return
 
 # Program launcher
 super + @space
-  dmenu_run
+  rofi -show drun
 
 # Browser
 super + shift + {f,p}

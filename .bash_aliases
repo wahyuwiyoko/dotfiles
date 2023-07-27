@@ -17,6 +17,18 @@ alias xpropr="xprop | grep WM_WINDOW_ROLE"
 alias drivers="grep drivers $XDG_DATA_HOME/xorg/Xorg.0.log"
 alias keybind="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
 
+# APT
+alias update="sudo apt update"
+alias upgrade="sudo apt upgrade"
+alias autopurge="sudo apt autopurge"
+alias autoclean="sudo apt autoclean"
+alias uplist="apt list --upgradable"
+
+# trash-cli
+alias trp="trash-put"
+alias trl="trash-list"
+alias trr="trash-restore"
+
 # Miscellaneous
 alias myip="curl ifconfig.co/json"
 
@@ -47,9 +59,10 @@ alias gpgexppub="gpg --export --armor --output public-key.asc"
 alias gpgexpsec="gpg --export-secret-keys --armor --output private-key.asc"
 
 # yt-dlp
-alias yta-best="yt-dlp --extract-audio --audio-format best"
-alias yta-mp3="yt-dlp --extract-audio --audio-format mp3"
-alias ytv-best="yt-dlp -f bestvideo+bestaudio"
+alias ytmp3="yt-dlp -x --audio-format mp3 --embed-metadata --restrict-filenames"
+alias yt480="yt-dlp -S 'res:480'"
+alias yt360="yt-dlp -f 18"
+alias ytformat="yt-dlp --list-formats"
 
 # Resource monitoring
 alias free="free -h"

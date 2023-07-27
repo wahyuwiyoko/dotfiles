@@ -1,0 +1,11 @@
+configuration {
+  modi: "drun";
+  font: "JetBrains Mono 10";
+  drun-display-format: "{name}";
+  disable-history: true;
+  replace: true;
+  cycle: false;
+  display-drun: "> ";
+}
+
+@theme "rose-pine"

@@ -1,0 +1,39 @@
+* {
+  text-color: #e0def4;
+  background-color: #191724;
+}
+
+element {
+  padding: 12px;
+}
+
+element selected {
+  text-color: #191724;
+  background-color: #c4a7e7;
+}
+
+element-text {
+  highlight: none;
+  text-color: inherit;
+  background-color: inherit;
+}
+
+window {
+  width: 25%;
+  border: 2px;
+  border-color: #c4a7e7;
+}
+
+mainbox {
+  padding: 18px;
+}
+
+listview {
+  lines: 10;
+  spacing: 0;
+}
+
+inputbar {
+  margin: 0 0 15px 0;
+  padding: 0 0 0 12px;
+}

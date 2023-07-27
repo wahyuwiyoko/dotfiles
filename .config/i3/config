@@ -27,8 +27,6 @@ default_border pixel 3
 default_floating_border pixel 3
 popup_during_fullscreen smart
 gaps inner 10
-gaps outer 5
-smart_borders on
 force_display_urgency_hint 5000 ms
 focus_follows_mouse no
 
@@ -38,11 +36,8 @@ bindsym $mod+b border toggle
 # Move tiling windows via drag & drop by modifier and left-clicking
 tiling_drag modifier titlebar
 
-# dmenu
-set $dmenu "dmenu -i -b -nf '#e0def4' -nb '#191724' -sb '#c4a7e7' \
--sf '#191724' -fn 'JetBrains Mono-10' -p 'dmenu'"
-
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu=$dmenu
+# Application launcher
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # Terminal
 bindsym $mod+Return exec --no-startup-id alacritty
