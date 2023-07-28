@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 essid=$(nmcli -t -f active,ssid dev wifi | awk -F: '/^yes/ { print $2 }')
 
-if [[ -n $essid ]]; then
-  label=$essid
+if [ -n "$essid" ]; then
+  label="$essid"
 else
   label="Disconnected"
 fi

@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Load X resources
-xrdb -load $HOME/.config/X11/xresources
+xrdb -load "$HOME/.config/X11/xresources"
 
 # Set wallpaper
-hsetroot -cover $HOME/Pictures/Wallpapers/ > /dev/null 2>&1
+hsetroot -cover "$HOME/pictures/wallpapers/" > /dev/null 2>&1
 
 # Start Dunst
 dunst &
@@ -25,4 +25,4 @@ xsetroot -cursor_name left_ptr
 amixer -c 0 sset Headphone 100%+ unmute -q
 
 # Execute window manager
-exec i3
+exec bspwm

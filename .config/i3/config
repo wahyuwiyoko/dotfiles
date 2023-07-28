@@ -23,8 +23,8 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 # Window style
 title_align center
 hide_edge_borders both
-default_border pixel 3
-default_floating_border pixel 3
+default_border pixel 2
+default_floating_border pixel 2
 popup_during_fullscreen smart
 gaps inner 10
 force_display_urgency_hint 5000 ms

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+options=$(printf "Logout\nShutdown\nReboot\nSuspend\nHibernate" | rofi -dmenu -i -p "> ")
+
+case "$options" in
+  "Logout") loginctl terminate-user "$USER" ;;
+  "Shutdown") systemctl poweroff ;;
+  "Reboot") systemctl reboot ;;
+  "Suspend") systemctl suspend ;;
+  "Hibernate") systemctl hibernate ;;
+esac

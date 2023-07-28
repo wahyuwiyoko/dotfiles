@@ -1,13 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
 output=$(amixer -D pipewire sget Master | grep "Left:")
 
-volume=$(echo $output | awk -F "[][]" '{ print $2 }')
-status=$(echo $output | awk -F "[][]" '{ print $4 }')
+volume=$(echo "$output" | awk -F '[][]' '{ print $2 }')
+status=$(echo "$output" | awk -F '[][]' '{ print $4 }')
 
-if [[ $status == "off" ]]; then
+if [ "$status" = "off" ]; then
   label="MUTED"
-elif [[ $status == "on" ]]; then
+elif [ "$status" = "on" ]; then
   label="VOL $volume"
 fi
 
