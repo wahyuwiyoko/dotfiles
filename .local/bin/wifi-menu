@@ -1,0 +1,59 @@
+#!/bin/sh
+
+enable_wifi() {
+  nmcli radio wifi on
+  notify-send "Wi-Fi enabled."
+}
+
+disable_wifi() {
+  nmcli radio wifi off
+  notify-send "Wi-Fi disabled."
+}
+
+wifi_status="$(nmcli radio wifi)"
+
+case "$wifi_status" in
+  "enabled") toggle="Disable Wi-Fi" ;;
+  "disabled") toggle="Enable Wi-Fi" ;;
+esac
+
+ssid_list="$(nmcli -f "security,ssid" device wifi list | sed 1d |
+  sed 's/  */ /g' | sed -E 's/WPA[^ ]*/WPA /g' | sed 's/WPA  WPA/WPA/g' |
+  sed 's/^--/Open /g' | sed '/--/d')"
+
+network_option="$(printf "%s\n%s\n" "$toggle" "$ssid_list" |
+  awk '!seen[$0]++' | rofi -dmenu -i -p "> ")"
+
+selected_ssid="$(echo "${network_option#???}" | xargs)"
+
+connect_wifi() {
+  connected_msg="You are now connected to the Wi-Fi network \"$selected_ssid\"."
+  connected_ssid="$(nmcli -t -f "active,ssid" dev wifi list | grep yes |
+    cut -d ':' -f2)"
+
+  if [ "$connected_ssid" = "$selected_ssid" ]; then
+    nmcli connection up id "$selected_ssid" | grep -q "successfully" &&
+    notify-send "Connection Established" "$connected_msg"
+  else
+    if echo "$network_option" | grep -q "WPA"; then
+      password=$(rofi -dmenu -i -p "Password: " -password)
+    fi
+
+    connection_output=$(nmcli device wifi connect "$selected_ssid" password "$password" 2>&1)
+
+    if echo "$connection_output" | grep -q "Connection activation failed"; then
+      notify-send "Cannot connect to Wi-Fi network \"$selected_ssid\"." "Wrong password entered."
+    elif echo "$connection_output" | grep -q "No network with SSID"; then
+      notify-send "No network with SSID \"$selected_ssid\" found."
+    elif echo "$connection_output" | grep -q "successfully"; then
+      notify-send "Connection Established" "$connected_msg"
+    fi
+  fi
+}
+
+case "$network_option" in
+  "") exit ;;
+  "Enable Wi-Fi") enable_wifi ;;
+  "Disable Wi-Fi") disable_wifi ;;
+  *) connect_wifi ;;
+esac
