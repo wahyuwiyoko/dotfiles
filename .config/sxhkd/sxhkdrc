@@ -14,6 +14,10 @@ super + shift + {f,p}
 ctrl + {@space,grave,shift + @space}
   dunstctl {close,history-pop,close-all}
 
+# Restart Dunst
+super + shift + d
+  killall dunst; dunst; notify-send "Restart Dunst"
+
 # Screen brightness controls
 super + {Delete,BackSpace}
   light {-A 1,-U 1}

@@ -1,11 +1,11 @@
 #!/bin/sh
 
-output="$HOME/pictures/$(date +'%Y-%m-%d-%H:%M:%S')-screenshot.png"
+output="$HOME/pictures/$(date +'%Y-%m-%d-%H%M%S')_maim.png"
 
 case "$1" in
-  "select") scrot "$output" -s -l mode=edge || exit ;;
-  "window") scrot "$output" -u -b || exit ;;
-  *) scrot "$output" || exit ;;
+  "select") maim -u -q -s -f png "$output" ;;
+  "window") maim -u -q -i $(xdotool getactivewindow) -f png "$output" ;;
+  *) maim -u -q -f png "$output" ;;
 esac
 
 notify-send "Screenshot saved to ~/pictures"

@@ -26,7 +26,6 @@ show_indicators = yes
 icon_position = off
 sticky_history = yes
 history_length = 20
-corner_radius = 10
 
 [urgency_low]
 background = "#191724"
