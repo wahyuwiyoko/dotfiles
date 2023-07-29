@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=nnn
+Name=LF File Manager
 GenericName=Terminal File Manager
-Exec=nnn
+Exec=lf
 Terminal=true

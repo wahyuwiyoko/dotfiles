@@ -2,10 +2,12 @@
 application/json=nvim.desktop
 application/pdf=org.pwmt.zathura.desktop
 application/x-shellscript=nvim.desktop
+audio/mpeg=cmus.desktop
 image/jpeg=nsxiv.desktop
 image/png=nsxiv.desktop
-inode/directory=nnn.desktop
+inode/directory=lf.desktop
 text/html=nvim.desktop
+text/markdown=nvim.desktop
 text/plain=nvim.desktop
 video/mp4=mpv.desktop
 x-scheme-handler/about=firefox-private.desktop

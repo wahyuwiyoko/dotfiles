@@ -2,6 +2,6 @@
 
 brightness=$(cat /sys/class/backlight/*/brightness)
 max_brightness=$(cat /sys/class/backlight/*/max_brightness)
-percentage=$(( ($brightness * 100) / $max_brightness ))
+percentage=$(( (brightness * 100) / max_brightness ))
 
 echo "<span bgcolor='#c4a7e7'> BRI $percentage% </span>"
