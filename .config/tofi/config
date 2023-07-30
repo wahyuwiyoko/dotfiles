@@ -1,0 +1,29 @@
+font = "JetBrains Mono"
+font-size = 10
+hint-font = true
+
+prompt-text = "> "
+drun-launch = true
+num-results = 10
+history = false
+result-spacing = 25
+
+width = 25%
+height = 65%
+
+outline-width = 0
+border-width = 3
+corner-radius = 10
+
+padding-top = 15
+padding-bottom = 15
+padding-left = 15
+padding-right = 15
+
+text-color = #e0def4
+background-color = #191724
+border-color = #c4a7e7
+
+selection-color = #191724
+selection-background = #c4a7e7
+selection-background-padding = 10
