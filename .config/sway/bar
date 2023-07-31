@@ -1,0 +1,88 @@
+#!/bin/sh
+
+# Short example of i3bar protocol:
+# https://github.com/i3/i3/blob/next/contrib/trivial-bar-script.sh
+
+color="#191724"
+bg_color="#c4a7e7"
+align="center"
+separator="false"
+
+datetime() {
+  echo "
+    {
+      \"name\": \"datetime\",
+      \"full_text\": \" $(date +'%b %-e, %-l:%M %p') \",
+      \"color\": \"$color\",
+      \"background\": \"$bg_color\",
+      \"align\": \"$align\",
+      \"separator\": $separator
+    }
+  "
+}
+
+battery() {
+  percentage=$(cat /sys/class/power_supply/BAT0/capacity)
+
+  echo "
+    {
+      \"name\": \"battery\",
+      \"full_text\": \" BAT $percentage% \",
+      \"color\": \"$color\",
+      \"background\": \"$bg_color\",
+      \"align\": \"$align\",
+      \"separator\": $separator
+    }
+  "
+}
+
+volume() {
+  percentage=$(amixer -D pipewire sget Master | grep "Left:" | awk -F '[][]' '{ print $2 }')
+
+  echo "
+    {
+      \"name\": \"volume\",
+      \"full_text\": \" VOL $percentage% \",
+      \"color\": \"$color\",
+      \"background\": \"$bg_color\",
+      \"align\": \"$align\",
+      \"separator\": $separator
+    }
+  "
+}
+
+network() {
+  essid=$(nmcli -t -f "active,ssid" dev wifi | awk -F: '/^yes/ { print $2 }')
+
+  if [ -n "$essid" ]; then
+    wifi="$essid"
+  else
+    wifi="Disconnected"
+  fi
+
+  echo "
+    {
+      \"name\": \"network\",
+      \"full_text\": \" $wifi \",
+      \"color\": \"$color\",
+      \"background\": \"$bg_color\",
+      \"align\": \"$align\",
+      \"separator\": $separator
+    }
+  "
+}
+
+echo '{ "version": 1, "click_events": false }'
+
+# Begin the endless array
+echo "["
+
+# Send an empty first array of blocks to make the loop simpler
+echo "[]"
+
+# Send blocks with information
+while true; do
+  echo ",[$(network),$(volume),$(battery),$(datetime)]"
+
+  sleep 5
+done

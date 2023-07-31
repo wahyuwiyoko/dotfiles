@@ -149,8 +149,12 @@ bar {
   position top
   font pango:JetBrains Mono 10
   tray_output none
-  separator_symbol " | "
   workspace_min_width 25
+  status_padding 5
+  status_edge_padding 10
+  # separator_symbol " | "
+
+  status_command $HOME/.config/sway/bar
 
   colors {
     background $base
