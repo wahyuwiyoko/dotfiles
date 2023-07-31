@@ -1,0 +1,177 @@
+set $mod Mod4
+
+font pango:Inter Medium 11
+
+input "2362:597:HTIX5288:00_093A:0255_Touchpad" tap enabled
+output * bg ~/pictures/wallpapers/ fill
+
+xwayland force
+popup_during_fullscreen smart
+force_display_urgency_hint 5000 ms
+focus_follows_mouse no
+floating_modifier $mod
+
+bindsym $mod+Shift+q kill
+
+bindsym XF86AudioRaiseVolume exec amixer -D pipewire -q sset Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -D pipewire -q sset Master 5%- unmute
+bindsym XF86AudioMute exec amixer -D pipewire -q sset Master toggle
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+title_align center
+default_border pixel 3
+gaps inner 10
+
+bindsym $mod+d exec fuzzel --log-level=none
+bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+p exec firefox --private-window
+
+bindsym $mod+Shift+d exec makoctl reload
+bindsym Ctrl+grave exec makoctl restore
+bindsym Ctrl+space exec makoctl dismiss
+bindsym Ctrl+Shift+space exec makoctl dismiss -a
+
+bindsym $mod+Print exec grimshot --notify save screen
+bindsym $mod+Shift+Print exec grimshot --notify save area
+bindsym $mod+Ctrl+Print exec grimshot --notify save window
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+bindsym $mod+b border toggle
+bindsym $mod+w layout toggle split tabbed
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space floating toggle
+bindsym F11 fullscreen toggle
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+bindsym $mod+p focus parent
+bindsym $mod+c focus child
+
+bindsym $mod+Shift+c reload
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+bindsym $mod+backslash workspace back_and_forth
+bindsym $mod+bracketright workspace next
+bindsym $mod+bracketleft workspace prev
+
+bindsym $mod+Delete exec light -A 1
+bindsym $mod+backspace exec light -U 1
+
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+  bindsym $left resize shrink width 10px
+  bindsym $down resize grow height 10px
+  bindsym $up resize shrink height 10px
+  bindsym $right resize grow width 10px
+
+  bindsym Escape mode "default"
+}
+
+set $mode_system (l)ogout, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff
+set $lock swaylock -c 191724
+
+bindsym $mod+Shift+e mode "$mode_system"
+
+mode "$mode_system" {
+  bindsym l exec loginctl terminate-user $USER, mode "default"
+  bindsym s exec $lock && systemctl suspend, mode "default"
+  bindsym h exec $lock && systemctl hibernate, mode "default"
+  bindsym r exec systemctl reboot, mode "default"
+  bindsym p exec systemctl poweroff, mode "default"
+
+  bindsym Escape mode "default"
+}
+
+for_window [window_role="About"] floating enable
+for_window [window_role="Organizer"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="page-info"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="toolbox"] floating enable
+for_window [window_role="webconsole"] floating enable
+for_window [window_role="dialog"] floating enable
+for_window [window_role="menu"] floating enable
+for_window [app_id="flameshot"] floating enable
+
+set $base #191724
+set $surface #1f1d2e
+set $overlay #26233a
+set $text #e0def4
+set $love #eb6f92
+set $rose #ebbcba
+set $iris #c4a7e7
+set $highlight #524f67
+
+bar {
+  position top
+  font pango:JetBrains Mono 10
+  tray_output none
+  separator_symbol " | "
+  workspace_min_width 25
+
+  colors {
+    background $base
+    statusline $text
+    separator $highlight
+
+    # Class            Border   Bground  Text
+    focused_workspace  $iris    $iris    $base
+    active_workspace   $iris    $iris    $base
+    inactive_workspace $overlay $overlay $text
+    urgent_workspace   $love    $love    $base
+    binding_mode       $rose    $rose    $base
+  }
+}
+
+# Class                 Border   Bground  Text  Indicator Child_border
+client.focused          $iris    $iris    $base $iris     $iris
+client.focused_inactive $surface $surface $text $surface  $surface
+client.unfocused        $surface $surface $text $surface  $surface
+client.urgent           $love    $love    $base $love     $love
+client.placeholder      $base    $base    $text $base     $base 
+client.background       $base
+
+include ~/.config/sway/config.d/autostart

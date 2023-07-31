@@ -4,7 +4,7 @@
 
 - Distribution: Debian Bookworm
 - Shell: Bash
-- Window manager: i3 & bspwm
+- Window manager: i3, bspwm, and Sway
 - Status bar: i3blocks & Polybar
 - Network manager: NetworkManager
 - Notification daemon: Dunst
