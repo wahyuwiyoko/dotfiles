@@ -17,13 +17,13 @@ bind-key G end
 bind-key a toggle-article-read
 bind-key c toggle-show-read-feeds
 
-color background         yellow  default
-color listnormal         white   default
-color listnormal_unread  white   default
-color listfocus          black   cyan
-color listfocus_unread   black   cyan
-color info               black   cyan
-color article            white   default
+color background         yellow default
+color listnormal         white  default
+color listnormal_unread  white  default
+color listfocus          black  magenta
+color listfocus_unread   black  magenta
+color info               black  cyan
+color article            white  default
 
 highlight article "^(Feed|Link):.*$" white default bold
 highlight article "^(Title|Date|Author):.*$" white default bold
