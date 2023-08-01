@@ -1,0 +1,11 @@
+max-history=20
+font=Inter 11
+background-color=#191724
+text-color=#e0def4
+padding=10
+border-color=#c4a7e7
+progress-color=over #31748f
+icons=0
+
+[urgency=critical]
+border-color=#eb6f92
