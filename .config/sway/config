@@ -155,9 +155,8 @@ bar {
   workspace_min_width 25
   status_padding 5
   status_edge_padding 10
-  # separator_symbol " | "
 
-  status_command $HOME/.config/sway/bar
+  status_command sway-bar
 
   colors {
     background $base

@@ -1,5 +1,5 @@
 # Set modifier
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles
 font pango:Inter Medium 11
@@ -75,7 +75,7 @@ bindsym $mod+s split toggle
 bindsym F11 fullscreen toggle
 
 # Change container layout
-bindsym $mod+w layout toggle
+bindsym $mod+w layout toggle splith tabbed
 
 # Toggle tiling or floating
 bindsym $mod+Shift+space floating toggle
@@ -160,8 +160,8 @@ bindsym $mod+Shift+e mode "$mode_system"
 
 mode "$mode_system" {
   bindsym l exec --no-startup-id loginctl terminate-user $USER, mode "default"
-  bindsym s exec --no-startup-id systemctl suspend && $lock, mode "default"
-  bindsym h exec --no-startup-id systemctl hibernate && $lock, mode "default"
+  bindsym s exec --no-startup-id $lock && systemctl suspend, mode "default"
+  bindsym h exec --no-startup-id $lock && systemctl hibernate, mode "default"
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
   bindsym p exec --no-startup-id systemctl poweroff, mode "default"
 
@@ -182,9 +182,6 @@ for_window [window_role="webconsole"] floating enable
 for_window [window_role="dialog"] floating enable
 for_window [window_role="menu"] floating enable
 
-# Toggle hide or show status bar
-bindsym $mod+m bar mode toggle
-
 set $base #191724
 set $surface #1f1d2e
 set $overlay #26233a
@@ -201,11 +198,11 @@ set $highlight #524f67
 
 # Start i3bar to display a workspace bar
 bar {
-  status_command i3blocks
+  status_command i3status
   position top
   tray_output none
   font pango:JetBrains Mono 11
-  # separator_symbol " | "
+  separator_symbol " | "
   padding 3px 10px 3px 0
   workspace_min_width 25
 
