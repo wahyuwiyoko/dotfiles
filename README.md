@@ -1,26 +1,53 @@
 # Dotfiles
 
+i3, bspwm, Sway, and many other software configurations and scripts for my desktop.
+
+I try to avoid using Nerd Fonts or any other font icons, so there are no icons
+included on all of my configuration.
+
+## Screenshots
+
+### i3 + i3status
+
+My first tiling window manager, because it's well documented for new user.
+
+![i3 with i3status](screenshots/i3.png)
+
+### bspwm + Polybar
+
+I like how bspwm have dynamic tiling and monocle layout.
+
+![bspwm with Polybar](screenshots/bspwm.png)
+
+### Sway + Waybar
+
+I'm glad that there is an _i3-like_ for Wayland. It's my main window
+manager by now, just because it's smoother and simpler than X11.
+
+![Sway with Waybar](screenshots/sway.png)
+
 ## Systems
 
 - Distribution: Debian Bookworm
 - Shell: Bash
+- Init system: systemd
 - Window manager: i3, bspwm, and Sway
 - Status bar: i3status, i3blocks, Polybar, swaybar, and Waybar
 - Network manager: NetworkManager
-- Notification daemon: Dunst (X11), Mako (Wayland)
-- Screen locker: i3lock (X11), swaylock (Wayland)
+- Notification daemon: Dunst (X11) and Mako (Wayland)
+- Screen locker: i3lock (X11) and swaylock (Wayland)
 - Backlight controller: light
 
 ## Software
 
 - Terminal: Alacritty
-- Application launcher: Rofi (X11), Fuzzel (Wayland)
+- Application launcher: Rofi (X11) and Fuzzel (Wayland)
 - Firewall manager: UFW
 - Wallpaper switcher: hsetroot (X11)
 - Text editor: Neovim
 - Image viewer: imv
 
-## Details
+## Note
 
 For more details how to set up and installing the packages,
 please read my post:
