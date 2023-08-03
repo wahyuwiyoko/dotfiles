@@ -5,20 +5,20 @@
 - Distribution: Debian Bookworm
 - Shell: Bash
 - Window manager: i3, bspwm, and Sway
-- Status bar: i3blocks & Polybar
+- Status bar: i3status, i3blocks, Polybar, and swaybar
 - Network manager: NetworkManager
-- Notification daemon: Dunst
-- Screen locker: i3lock
+- Notification daemon: Dunst (X11), Mako (Wayland)
+- Screen locker: i3lock (X11), swaylock (Wayland)
 - Backlight controller: light
 
 ## Software
 
 - Terminal: Alacritty
-- Application launcher: Rofi
+- Application launcher: Rofi (X11), Fuzzel (Wayland)
 - Firewall manager: UFW
-- Wallpaper switcher: hsetroot
+- Wallpaper switcher: hsetroot (X11)
 - Text editor: Neovim
-- Image viewer: nsxiv
+- Image viewer: imv
 
 ## Details
 

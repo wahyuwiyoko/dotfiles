@@ -1,0 +1,9 @@
+#!/bin/sh
+
+printf "User: %s\n" "$(whoami)"
+printf "Hostname: %s\n" "$(hostname)"
+printf "OS: %s\n" "$(lsb_release -ds)"
+printf "WM: %s\n" "$XDG_CURRENT_DESKTOP"
+printf "Kernel: %s\n" "$(uname -r)"
+printf "Shell: %s\n" "$(basename $SHELL)"
+printf "Packages: %s\n" "$(dpkg -l | grep -c ^i)"
