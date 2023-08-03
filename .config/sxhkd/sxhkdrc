@@ -20,15 +20,18 @@ super + shift + d
 
 # Screen brightness controls
 super + {Delete,BackSpace}
-  light {-A 1,-U 1}
+  light {-A,-U} 1
 
 # Screenshoter
 super + {_,shift,ctrl} + @Print
   screenshot {_,select,window}
 
 # Adjust volume
-XF86Audio{RaiseVolume,LowerVolume,Mute}
-  amixer -D pipewire -q sset Master {5%+ unmute,5%- unmute,toggle}
+XF86Audio{RaiseVolume,LowerVolume}
+  wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%{+,-} -l 1.2
+
+XF86AudioMute
+  wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
 # Media player controls
 XF86Audio{Play,Next,Prev}
