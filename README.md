@@ -5,7 +5,7 @@
 - Distribution: Debian Bookworm
 - Shell: Bash
 - Window manager: i3, bspwm, and Sway
-- Status bar: i3status, i3blocks, Polybar, and swaybar
+- Status bar: i3status, i3blocks, Polybar, swaybar, and Waybar
 - Network manager: NetworkManager
 - Notification daemon: Dunst (X11), Mako (Wayland)
 - Screen locker: i3lock (X11), swaylock (Wayland)

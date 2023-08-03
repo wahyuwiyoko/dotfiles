@@ -1,0 +1,28 @@
+{
+  "height": 30,
+  "spacing": 10,
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "wireplumber", "battery"],
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%A, %d %B %Y}",
+    "tooltip-format": "{calendar}"
+  },
+  "network": {
+    "format-wifi": "{essid}",
+    "format-disconnected": "Disconnected",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format": "{ifname} via {gwaddr}"
+  },
+  "wireplumber": {
+    "format": "VOL {volume}%",
+    "format-muted": "MUTED",
+    "tooltip-format": "{node_name}"
+  },
+  "battery": {
+    "format": "BAT {capacity}%",
+    "format-charging": "CHR {capacity}%",
+    "tooltip-format": "{time}"
+  }
+}

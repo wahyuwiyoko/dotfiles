@@ -1,0 +1,63 @@
+* {
+  font-family: JetBrains Mono;
+  font-size: 13px;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+#workspaces button {
+  color: #6e6a86;
+  padding: 0 10px;
+  border-radius: 12px;
+}
+
+/* https://github.com/Alexays/Waybar/issues/60 */
+#workspaces button:hover {
+  background: none;
+  box-shadow: none;
+  text-shadow: none;
+  transition: none;
+  border-color: transparent;
+}
+
+#workspaces button.focused {
+  color: #c4a7e7;
+  background-color: #21202e;
+}
+
+#workspaces button.urgent {
+  color: #191724;
+  background-color: #eb6f92;
+}
+
+#mode,
+#clock,
+#network,
+#wireplumber,
+#battery {
+  padding: 0 15px;
+}
+
+#network.disconnected,
+#wireplumber.muted {
+  color: #6e6a86;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  background-color: #191724;
+  color: #c4a7e7;
+  border-radius: 12px;
+  margin-top: 5px;
+}
+
+.modules-left {
+  margin-left: 10px;
+}
+
+.modules-right {
+  margin-right: 10px;
+}

@@ -57,6 +57,7 @@ bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
+bindsym $mod+s split toggle
 bindsym $mod+b border toggle
 bindsym $mod+w layout toggle split tabbed
 bindsym $mod+space focus mode_toggle
@@ -118,8 +119,8 @@ bindsym $mod+Shift+e mode "$mode_system"
 
 mode "$mode_system" {
   bindsym l exec loginctl terminate-user $USER, mode "default"
-  bindsym s exec $lock && systemctl suspend, mode "default"
-  bindsym h exec $lock && systemctl hibernate, mode "default"
+  bindsym s exec systemctl suspend && $lock, mode "default"
+  bindsym h exec systemctl hibernate && $lock, mode "default"
   bindsym r exec systemctl reboot, mode "default"
   bindsym p exec systemctl poweroff, mode "default"
 
@@ -149,14 +150,14 @@ set $iris #c4a7e7
 set $highlight #524f67
 
 bar {
+  swaybar_command waybar
   position top
   font pango:JetBrains Mono 10
   tray_output none
   workspace_min_width 25
   status_padding 5
   status_edge_padding 10
-
-  status_command sway-bar
+  # status_command sway-bar
 
   colors {
     background $base
