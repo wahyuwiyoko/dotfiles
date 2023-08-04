@@ -7,6 +7,8 @@ included on all of my configuration.
 
 ## Screenshots
 
+You can find a list of wallpaper that I liked [here](screenshots/wallpapers.md).
+
 ### i3 + i3status
 
 My first tiling window manager, because it's well documented for new user.
