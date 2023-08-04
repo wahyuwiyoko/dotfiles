@@ -6,6 +6,6 @@ case "$options" in
   "Logout") loginctl terminate-user "$USER" ;;
   "Shutdown") systemctl poweroff ;;
   "Reboot") systemctl reboot ;;
-  "Suspend") i3lock -c 191724 && systemctl suspend ;;
-  "Hibernate") i3lock -c 191724 && systemctl hibernate ;;
+  "Suspend") systemctl suspend && i3lock -c 191724 ;;
+  "Hibernate") systemctl hibernate && i3lock -c 191724 ;;
 esac

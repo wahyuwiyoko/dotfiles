@@ -10,7 +10,7 @@ super + @space
 super + shift + {f,p}
   {firefox,firefox --private-window}
 
-# Dunst
+# Dunst for notification
 ctrl + {@space,grave,shift + @space}
   dunstctl {close,history-pop,close-all}
 
@@ -24,7 +24,7 @@ super + {Delete,BackSpace}
 
 # Screenshoter
 super + {_,shift,ctrl} + @Print
-  screenshot {_,select,window}
+  screenshot {_,area,window}
 
 # Adjust volume
 XF86Audio{RaiseVolume,LowerVolume}

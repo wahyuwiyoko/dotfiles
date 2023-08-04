@@ -4,6 +4,11 @@ set $mod Mod4
 # Font for window titles
 font pango:Inter Medium 11
 
+# Window behavior
+popup_during_fullscreen smart
+force_display_urgency_hint 5000 ms
+focus_follows_mouse no
+
 # Use $mod+Mouse to drag floating windows
 floating_modifier $mod
 
@@ -25,65 +30,74 @@ title_align center
 hide_edge_borders both
 default_border pixel 3
 default_floating_border pixel 3
-popup_during_fullscreen smart
 gaps inner 10
-force_display_urgency_hint 5000 ms
-focus_follows_mouse no
-
-# Toggle window border
-bindsym $mod+b border toggle
 
 # Move tiling windows via drag & drop by modifier and left-clicking
 tiling_drag modifier titlebar
 
-# Application launcher
+# Program launcher
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
-# Terminal
+# Terminal emulator
 bindsym $mod+Return exec --no-startup-id alacritty
 
 # Browser
 bindsym $mod+Shift+f exec --no-startup-id firefox
 bindsym $mod+Shift+p exec --no-startup-id firefox --private-window
 
-# Dunst
+# Dunst for notification
 bindsym $mod+Shift+d exec --no-startup-id killall dunst; \
 exec --no-startup-id dunst &; exec --no-startup-id notify-send "Restart Dunst"
-bindsym Ctrl+BackSpace exec --no-startup-id dunstctl history-pop
+bindsym Ctrl+grave exec --no-startup-id dunstctl history-pop
 bindsym Ctrl+space exec --no-startup-id dunstctl close
-bindsym $mod+x exec --no-startup-id dunstctl close-all
+bindsym Ctrl+Shift+space exec --no-startup-id dunstctl close-all
 
 # Screenshoter
-bindsym Print exec --no-startup-id flameshot launcher
+bindsym $mod+Print exec --no-startup-id screenshot
+bindsym $mod+Shift+Print exec --no-startup-id screenshot area
+bindsym $mod+Ctrl+Print exec --no-startup-id screenshot window
+
+# Screen brightness controls
+bindsym $mod+Delete exec --no-startup-id light -A 1
+bindsym $mod+BackSpace exec --no-startup-id light -U 1
+
+# Set movement key
+set $left h
+set $down j
+set $up k
+set $right l
 
 # Change focused window
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
 # Move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
 # Splitting containers
 bindsym $mod+s split toggle
 
-# Enter fullscreen mode for focused container
-bindsym F11 fullscreen toggle
+# Toggle window border
+bindsym $mod+b border toggle
 
 # Change container layout
-bindsym $mod+w layout toggle splith tabbed
-
-# Toggle tiling or floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+w layout toggle tabbed split
 
 # Change focus between tiling or floating windows
 bindsym $mod+space focus mode_toggle
 
-# Move the currently focused window to the scratchpad
+# Toggle tiling or floating
+bindsym $mod+Shift+space floating toggle
+
+# Enter fullscreen mode for focused container
+bindsym F11 fullscreen toggle
+
+# Move the focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
@@ -92,6 +106,12 @@ bindsym $mod+minus scratchpad show
 # Focus the parent or child container
 bindsym $mod+p focus parent
 bindsym $mod+c focus child
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace
+bindsym $mod+Shift+r restart
 
 # Names for default workspaces
 set $ws1 "1"
@@ -129,24 +149,19 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# Reload the configuration file
-bindsym $mod+Shift+c reload
-
-# Restart i3 inplace
-bindsym $mod+Shift+r restart
-
-# Screen brightness controls
-bindsym $mod+Delete exec --no-startup-id light -A 1
-bindsym $mod+BackSpace exec --no-startup-id light -U 1
+# Change focused workspace
+bindsym $mod+backslash workspace back_and_forth
+bindsym $mod+bracketright workspace next
+bindsym $mod+bracketleft workspace prev
 
 # Resize window
 bindsym $mod+r mode "resize"
 
 mode "resize" {
-  bindsym h resize shrink width 10 px or 10 ppt
-  bindsym j resize grow height 10 px or 10 ppt
-  bindsym k resize shrink height 10 px or 10 ppt
-  bindsym l resize grow width 10 px or 10 ppt
+  bindsym $left resize shrink width 10 px or 10 ppt
+  bindsym $down resize grow height 10 px or 10 ppt
+  bindsym $up resize shrink height 10 px or 10 ppt
+  bindsym $right resize grow width 10 px or 10 ppt
 
   # Back to normal
   bindsym Escape mode "default"
@@ -160,8 +175,8 @@ bindsym $mod+Shift+e mode "$mode_system"
 
 mode "$mode_system" {
   bindsym l exec --no-startup-id loginctl terminate-user $USER, mode "default"
-  bindsym s exec --no-startup-id $lock && systemctl suspend, mode "default"
-  bindsym h exec --no-startup-id $lock && systemctl hibernate, mode "default"
+  bindsym s exec --no-startup-id systemctl suspend && $lock, mode "default"
+  bindsym h exec --no-startup-id systemctl hibernate && $lock, mode "default"
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
   bindsym p exec --no-startup-id systemctl poweroff, mode "default"
 
@@ -182,17 +197,14 @@ for_window [window_role="webconsole"] floating enable
 for_window [window_role="dialog"] floating enable
 for_window [window_role="menu"] floating enable
 
+# Set color scheme
 set $base #191724
 set $surface #1f1d2e
 set $overlay #26233a
 set $muted #6e6a86
-set $subtle #908caa
 set $text #e0def4
 set $love #eb6f92
-set $gold #f6c177
 set $rose #ebbcba
-set $pine #31748f
-set $foam #9ccfd8
 set $iris #c4a7e7
 set $highlight #524f67
 
@@ -220,10 +232,10 @@ bar {
   }
 }
 
-# Class                 Border   Bground  Text  Indicator Child_border
-client.focused          $iris    $iris    $base $iris     $iris
-client.focused_inactive $surface $surface $text $surface  $surface
-client.unfocused        $surface $surface $text $surface  $surface
-client.urgent           $love    $love    $base $love     $love
-client.placeholder      $base    $base    $text $base     $base
+# Class                 Border Bground  Text  Indicator Child_border
+client.focused          $iris  $iris    $base $iris     $iris
+client.focused_inactive $muted $surface $text $muted    $muted
+client.unfocused        $muted $surface $text $muted    $muted
+client.urgent           $love  $love    $base $love     $love
+client.placeholder      $base  $base    $text $base     $base
 client.background       $base
