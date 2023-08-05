@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# Set the duration of each Pomodoro cycle in minutes
+POMODORO_DURATION=25
+SHORT_BREAK_DURATION=5
+LONG_BREAK_DURATION=15
+CYCLES_BEFORE_LONG_BREAK=4
+
+countdown() {
+  mins=$1
+  secs=$(( mins * 60 ))
+
+  while [ $secs -gt 0 ]; do
+    sleep 1
+    secs=$(( secs - 1 ))
+  done
+}
+
+notification() {
+  if command -v notify-send > /dev/null; then
+    notify-send "Pomodoro Timer" "$1"
+  fi
+}
+
+start_pomodoro() {
+  notification "Pomodoro started. Focus for $POMODORO_DURATION minutes."
+  countdown "$POMODORO_DURATION"
+  notification "Pomodoro finished. Take a break."
+}
+
+short_break() {
+  notification "Short break started. Take a break for $SHORT_BREAK_DURATION minutes."
+  countdown "$SHORT_BREAK_DURATION"
+  notification "Short break finished. Resume work."
+}
+
+long_break() {
+  notification "Long break started. Take a break for $LONG_BREAK_DURATION minutes."
+  countdown "$LONG_BREAK_DURATION"
+  notification "Long break finished. Resume work."
+}
+
+cycle_count=0
+
+while true; do
+  start_pomodoro
+
+  if [ $cycle_count -lt $(( CYCLES_BEFORE_LONG_BREAK - 1 )) ]; then
+    short_break
+    cycle_count=$(( cycle_count + 1 ))
+  else
+    long_break
+    cycle_count=0
+  fi
+done
