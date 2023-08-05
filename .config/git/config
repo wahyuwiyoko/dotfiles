@@ -8,6 +8,7 @@
   defaultBranch = main
 [commit]
   gpgSign = true
+  template = ~/.config/git/commit-template.txt
 [alias]
   st = status
   cm = commit

@@ -1,0 +1,19 @@
+# Subject -> Maximum 50 characters
+# If applied, this commit will...
+
+
+# Explain why this change is being made
+# Try to limit each line to a maximum of 72 characters
+
+
+# Provide links or keys to any relevant tickets, articles, or other resources
+# Example: GitHub issue #23
+
+
+# Reminder:
+# - Capitalize the subject line
+# - Use the imperative mood in the subject line
+# - Do not end the subject line with a period
+# - Separate subject from body with a blank line
+# - Use the body to explain what and why
+# - Can use multiple lines with "-" for bullet points in body
