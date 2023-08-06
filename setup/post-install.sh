@@ -4,7 +4,7 @@
 sudo apt install -y firmware-linux firmware-realtek intel-microcode
 
 # Build tools packages needed to build and compile software from source
-sudo apt install -y build-essential dkms linux-headers-$(uname -r)
+sudo apt install -y build-essential dkms linux-headers-"$(uname -r)"
 
 # Audio server packages to make audio work properly
 sudo apt install -y pipewire pipewire-audio alsa-utils
@@ -28,5 +28,4 @@ sudo apt-file update
 xdg-user-dirs-update
 
 # Move dotfiles from $HOME to follow XDG base directory
-mkdir -p "$HOME/.local/state/{bash,less}"
-mkdir -p "$HOME/.cache/X11"
+mkdir -p "$HOME/.local/state/bash" "$HOME/.local/state/less"

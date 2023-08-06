@@ -10,3 +10,6 @@ sudo apt install -y x11-utils xinput dbus-x11 xclip xdotool dunst xsettingsd
 
 # Applications and tools
 sudo apt install -y hsetroot rofi maim nsxiv
+
+# Cache directory for xsession-errors file
+mkdir -p "$HOME/.cache/X11"
