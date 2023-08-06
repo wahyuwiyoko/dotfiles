@@ -28,4 +28,4 @@ sudo apt-file update
 xdg-user-dirs-update
 
 # Dotfiles directory from $HOME to follow XDG base directory
-mkdir -p "$HOME/.local/state/bash" "$HOME/.local/state/less"
+mkdir -p "$HOME/.local/state/bash" "$HOME/.local/state/less" "$HOME/.local/bin"

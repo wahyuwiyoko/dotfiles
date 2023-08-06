@@ -14,3 +14,4 @@
   cm = commit
   onel = log --oneline
   graph = log --all --oneline --decorate --graph
+  diff-words = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
