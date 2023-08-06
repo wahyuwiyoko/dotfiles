@@ -5,9 +5,12 @@ i3, bspwm, Sway, and many other software configurations and scripts for my deskt
 I try to avoid using Nerd Fonts or any other font icons, so there are no icons
 included on all of my configuration.
 
-## Screenshots
+All setup and installer scripts are available in [setup](setup/) directory.
 
-You can find a list of wallpaper that I liked [here](screenshots/wallpapers.md).
+You can find a list of wallpaper that I liked in
+[screenshots/wallpapers.md](screenshots/wallpapers.md).
+
+## Screenshots
 
 ### i3 + i3status
 
