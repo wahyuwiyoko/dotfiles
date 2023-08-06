@@ -1,8 +1,7 @@
 #!/bin/sh
 
 # Create directory
-mkdir -p "$HOME/downloads/development"
-mkdir "$HOME/software"
+mkdir -p "$HOME/downloads/development" "$HOME/software"
 
 extract_tarballs() {
   wget -c --show-progress -O - "$1" | tar -xzf - -C  "$HOME/software"

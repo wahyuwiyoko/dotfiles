@@ -2,12 +2,12 @@
 
 # Docker engine: https://docs.docker.com/engine/install/debian/
 
-# Uninstall unofficial packages to avoid conflicts
+# Uninstall unofficial docker packages to avoid conflicts
 sudo apt purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin \
   docker-compose-plugin docker-ce-rootless-extras docker.io docker-doc \
   docker-compose podman-docker containerd runc
 
-# Create directory
+# Create docker directory
 mkdir -p "$HOME/downloads/docker"
 
 download_package() {
@@ -31,7 +31,8 @@ sudo apt install ./containerd.io_1.6.22-1_amd64.deb \
   ./docker-buildx-plugin_0.11.2-1~debian.12~bookworm_amd64.deb \
   ./docker-compose-plugin_2.20.2-1~debian.12~bookworm_amd64.deb
 
-cd "$OLDPWD" || exit
-
 # Start daemon
 sudo service docker start
+
+# Go to previous working directory
+cd "$OLDPWD" || exit

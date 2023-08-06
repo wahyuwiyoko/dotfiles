@@ -27,5 +27,5 @@ sudo apt-file update
 # Create the user's home directory
 xdg-user-dirs-update
 
-# Move dotfiles from $HOME to follow XDG base directory
+# Dotfiles directory from $HOME to follow XDG base directory
 mkdir -p "$HOME/.local/state/bash" "$HOME/.local/state/less"

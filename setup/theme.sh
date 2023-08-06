@@ -1,10 +1,7 @@
 #!/bin/sh
 
-# Create local theme and icon directory
-mkdir -p "$HOME/.local/share/themes" "$HOME/.local/share/icons"
-
-# Create rose-pine directory for downloads
-mkdir -p "$HOME/downloads/themes"
+# Create downloaded themes, local themes, and icons directory
+mkdir -p "$HOME/downloads/themes" "$HOME/.local/share/themes" "$HOME/.local/share/icons"
 
 extract_tarballs() {
   wget -c --show-progress -O - "$1" | tar -xzf - -C  "$HOME/downloads/themes"
@@ -14,7 +11,7 @@ extract_tarballs() {
 extract_tarballs "https://github.com/rose-pine/gtk/releases/download/v2.1.0/gtk3.tar.gz"
 extract_tarballs "https://github.com/rose-pine/gtk/releases/download/v2.1.0/rose-pine-icons.tar.gz"
 
-# Catppuccin cursors theme
+# Catppuccin cursor theme
 wget -P "$HOME/downloads/themes" -c --show-progress \
   https://github.com/catppuccin/cursors/releases/download/v0.2.0/Catppuccin-Mocha-Dark-Cursors.zip
 
