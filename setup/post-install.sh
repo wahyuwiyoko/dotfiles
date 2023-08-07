@@ -3,6 +3,9 @@
 # Firmware for hardware support
 sudo apt install -y firmware-linux firmware-realtek intel-microcode
 
+# Hardware acceleration
+sudo apt install va-driver-all vainfo libva2 intel-gpu-tools
+
 # Build tools packages needed to build and compile software from source
 sudo apt install -y build-essential dkms linux-headers-"$(uname -r)"
 
@@ -11,8 +14,8 @@ sudo apt install -y pipewire pipewire-audio alsa-utils
 
 # Miscellaneous packages for various tasks
 sudo apt install -y network-manager xdg-utils bc psmisc ntfs-3g udisks2 \
-  curl wget jq libnotify-bin fontconfig ufw command-not-found inxi jmtpfs \
-  net-tools zip light
+  curl wget jq libnotify-bin ffmpeg fontconfig ufw command-not-found inxi \
+  jmtpfs net-tools zip light
 
 # GTK+ packages needed to run GTK+ applications
 sudo apt install -y libgtk2.0-0 gtk2-engines gtk2-engines-murrine \

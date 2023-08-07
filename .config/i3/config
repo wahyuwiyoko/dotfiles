@@ -213,7 +213,7 @@ bar {
   status_command i3status
   position top
   tray_output none
-  font pango:JetBrains Mono 11
+  font pango:JetBrains Mono 10
   separator_symbol " | "
   padding 3px 10px 3px 0
   workspace_min_width 25

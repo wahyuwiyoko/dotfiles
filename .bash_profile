@@ -11,6 +11,7 @@ if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
 
   case "$XDG_CURRENT_DESKTOP" in
     "i3"|"bspwm")
+      export MOZ_X11_EGL=1
       exec startx -- "$HOME/.config/X11/xserverrc"
     ;;
     "sway")
