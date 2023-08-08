@@ -172,14 +172,13 @@ mode "resize" {
 
 # System mode
 set $mode_system (l)ogout, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff
-set $lock swaylock -c 191724
 
 bindsym $mod+Shift+e mode "$mode_system"
 
 mode "$mode_system" {
   bindsym l exec loginctl terminate-user $USER, mode "default"
-  bindsym s exec systemctl suspend && $lock, mode "default"
-  bindsym h exec systemctl hibernate && $lock, mode "default"
+  bindsym s exec systemctl suspend && swaylock, mode "default"
+  bindsym h exec systemctl hibernate && swaylock, mode "default"
   bindsym r exec systemctl reboot, mode "default"
   bindsym p exec systemctl poweroff, mode "default"
 

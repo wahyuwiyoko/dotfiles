@@ -1,0 +1,23 @@
+disable-caps-lock-text
+font=JetBrains Mono
+font-size=20
+color=191724
+indicator-radius=70
+bs-hl-color=f6c177
+key-hl-color=9ccfd8
+text-color=191724
+text-clear-color=191724
+text-ver-color=191724
+text-wrong-color=191724
+inside-color=26233a
+inside-clear-color=f6c177
+inside-ver-color=9ccfd8
+inside-wrong-color=eb6f92
+line-color=191724
+line-clear-color=191724
+line-ver-color=191724
+line-wrong-color=191724
+ring-color=6e6a86
+ring-clear-color=f6c177
+ring-ver-color=9ccfd8
+ring-wrong-color=eb6f92
