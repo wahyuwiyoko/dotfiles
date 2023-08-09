@@ -2,8 +2,8 @@
 
 i3, bspwm, Sway, and many other software configurations and scripts for my desktop.
 
-I try to avoid using Nerd Fonts or any other font icons, so there are no icons
-included on all of my configuration.
+I try to avoid using Nerd Fonts or any other patched fonts, so there are
+no icons included.
 
 All setup and installer scripts are available in [setup](setup/) directory.
 
@@ -36,6 +36,8 @@ manager by now, just because it's smoother and simpler than X11.
 - Distribution: Debian Bookworm
 - Shell: Bash
 - Init system: systemd
+- Graphics: Intel GeminiLake
+- Display server: X11 and Wayland
 - Window manager: i3, bspwm, and Sway
 - Status bar: i3status, i3blocks, Polybar, swaybar, and Waybar
 - Multimedia server: PipeWire
@@ -71,6 +73,27 @@ my post:
 I also had an article
 [how to enable touchpad tap-to-click](https://wahyuwiyoko.github.io/blog/linux/enable-touchpad-tap-to-click/)
 if you are curios how to enable it.
+
+If you want sxhkd to have like i3 binding mode, you can do that by following
+this example [issue](https://github.com/baskerville/sxhkd/issues/58).
+
+To disable bluetooth:
+
+```bash
+sudo systemctl disable bluetooth
+sudo systemctl mask bluetooth.target
+```
+
+If you want to tweak Xorg driver for Intel graphics, see the man pages for
+more details: `man intel`
+
+To know what keybinds pressed, use `xev` for X11, and `wev` for Wayland.
+
+If you have a cursor theme that stored in system-wide (`/usr/share/icons`) and
+want to use for spesific/local user, symlink the icon cursor directory to
+`~/.local/share/icons` and change the `Inherits` value inside
+`~/.local/share/icons/default/index.theme` according to your icons directory
+name.
 
 ## Special Thanks
 
