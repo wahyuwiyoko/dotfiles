@@ -15,7 +15,7 @@ sudo apt install -y pipewire pipewire-audio alsa-utils
 # Miscellaneous packages for various tasks
 sudo apt install -y network-manager xdg-utils bc psmisc ntfs-3g udisks2 \
   curl wget jq libnotify-bin ffmpeg fontconfig ufw command-not-found inxi \
-  jmtpfs net-tools zip light
+  jmtpfs net-tools zip light tlp
 
 # GTK+ packages needed to run GTK+ applications
 sudo apt install -y libgtk2.0-0 gtk2-engines gtk2-engines-murrine \
@@ -29,6 +29,9 @@ sudo apt-file update
 
 # Create the user's home directory
 xdg-user-dirs-update
+
+# Enable TLP
+sudo systemctl enable tlp
 
 # Dotfiles directory from $HOME to follow XDG base directory
 mkdir -p "$HOME/.local/state/bash" "$HOME/.local/state/less" "$HOME/.local/bin"
