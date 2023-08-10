@@ -66,34 +66,29 @@ manager by now, just because it's smoother and simpler than X11.
 
 ## Tips
 
-For more details about my set up and some packages that I used, you can read
-my post:
-[My Debian Setup](https://wahyuwiyoko.github.io/blog/linux/my-debian-setup-with-i3wm/).
-
-I also had an article
-[how to enable touchpad tap-to-click](https://wahyuwiyoko.github.io/blog/linux/enable-touchpad-tap-to-click/)
-if you are curios how to enable it.
-
-If you want sxhkd to have like i3 binding mode, you can do that by following
-this example [issue](https://github.com/baskerville/sxhkd/issues/58).
-
-To disable bluetooth:
+- For more details about my set up and some packages that I used, you can read
+  my post:
+  [My Debian Setup](https://wahyuwiyoko.github.io/blog/linux/my-debian-setup-with-i3wm/).
+- I also had an article
+  [how to enable touchpad tap-to-click](https://wahyuwiyoko.github.io/blog/linux/enable-touchpad-tap-to-click/)
+  if you are curios how to enable it.
+- If you want sxhkd to have like i3 binding mode, you can do that by following
+  this example [issue](https://github.com/baskerville/sxhkd/issues/58).
+- To disable bluetooth:
 
 ```bash
 sudo systemctl disable bluetooth
 sudo systemctl mask bluetooth.target
 ```
 
-If you want to tweak Xorg driver for Intel graphics, see the man pages for
-more details: `man intel`
-
-To know what keybinds pressed, use `xev` for X11, and `wev` for Wayland.
-
-If you have a cursor theme that stored in system-wide (`/usr/share/icons`) and
-want to use for spesific/local user, symlink the icon cursor directory to
-`~/.local/share/icons` and change the `Inherits` value inside
-`~/.local/share/icons/default/index.theme` according to your icons directory
-name.
+- If you want to tweak Xorg driver for Intel graphics, see the man pages for
+  more details: `man intel`
+- To know what keybinds pressed, use `xev` for X11, and `wev` for Wayland.
+- If you have a cursor theme that stored in system-wide (`/usr/share/icons`)
+  and want to use for spesific/local user, symlink the icon cursor directory to
+  `~/.local/share/icons` and change the `Inherits` value inside
+  `~/.local/share/icons/default/index.theme` according to your icons directory
+  name.
 
 ## Special Thanks
 
