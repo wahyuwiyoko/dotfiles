@@ -12,6 +12,9 @@ You can find a list of wallpaper that I liked in
 
 ## Screenshots
 
+You can look Neovim screenshot in
+[screenshots/neovim.png](screenshots/neovim.png).
+
 ### i3 + i3status
 
 My first tiling window manager, because it's well documented for new user.
@@ -52,7 +55,7 @@ manager by now, just because it's smoother and simpler than X11.
 - Text editor: Neovim
 - File manager: lf
 - Image viewer: nsxiv (X11) and swayimg (Wayland)
-- Screenshoter: Maim (X11) and Grimshot (Wayland)
+- Screenshoter: maim (X11) and grimshot (Wayland)
 
 ## Notes
 
@@ -67,8 +70,8 @@ manager by now, just because it's smoother and simpler than X11.
 ## Tips
 
 - For more details about my set up and some packages that I used, you can read
-  my post:
-  [My Debian Setup](https://wahyuwiyoko.github.io/blog/linux/my-debian-setup-with-i3wm/).
+  [my Debian setup](https://wahyuwiyoko.github.io/blog/linux/my-debian-setup/)
+  post.
 - I also had an article
   [how to enable touchpad tap-to-click](https://wahyuwiyoko.github.io/blog/linux/enable-touchpad-tap-to-click/)
   if you are curios how to enable it.
