@@ -4,13 +4,26 @@ set $mod Mod4
 # Font for window titles
 font pango:Inter Medium 11
 
-# Set input and output device
-input "2362:597:HTIX5288:00_093A:0255_Touchpad" tap enabled
+# Set input device
+input type:touchpad {
+  tap enabled
+  dwt enabled
+}
+
+# Set wallpaper
 output * bg ~/pictures/wallpapers/ fill
 
-# Hide cursor
-seat * hide_cursor 3000
+# Hide cursor while typing
 seat * hide_cursor when-typing enable
+
+# https://github.com/swaywm/sway/issues/5732
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+  dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+# Import GTK+ settings
+# https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
+exec import-gsettings
 
 # Disable Xwayland
 xwayland disable
@@ -242,5 +255,3 @@ client.unfocused        $muted $surface $text $muted    $muted
 client.urgent           $love  $love    $base $love     $love
 client.placeholder      $base  $base    $text $base     $base 
 client.background       $base
-
-include ~/.config/sway/config.d/autostart
