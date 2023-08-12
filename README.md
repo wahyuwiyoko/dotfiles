@@ -12,8 +12,8 @@ You can find a list of wallpaper that I liked in
 
 ## Screenshots
 
-You can look Neovim screenshot in
-[screenshots/neovim.png](screenshots/neovim.png).
+You can look Neovim screenshot in my
+[nvim repository](https://github.com/wahyuwiyoko/nvim).
 
 ### i3 + i3status
 
