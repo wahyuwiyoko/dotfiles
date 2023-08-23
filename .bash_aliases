@@ -12,10 +12,6 @@ alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 # Environment
 alias mergex="xrdb -merge $XDG_CONFIG_HOME/X11/xresources"
 alias pyserver="python3 -m http.server --directory"
-alias xpropc="xprop | grep WM_CLASS"
-alias xpropr="xprop | grep WM_WINDOW_ROLE"
-alias drivers="grep drivers $XDG_DATA_HOME/xorg/Xorg.0.log"
-alias keybind="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
 
 # APT
 alias update="sudo apt update"
@@ -47,16 +43,6 @@ alias ...="cd ../.."
 alias .3="cd ../../.."
 alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
-
-# Font
-alias ftlist="fc-list : family style"
-alias ftclean="fc-cache -fv"
-alias ftsearch="fc-list | grep"
-
-# GPG
-alias gpglist="gpg --list-secret-keys --keyid-format=long"
-alias gpgexppub="gpg --export --armor --output public-key.asc"
-alias gpgexpsec="gpg --export-secret-keys --armor --output private-key.asc"
 
 # yt-dlp
 alias ytmp3="yt-dlp -x --audio-format mp3 --embed-metadata --restrict-filenames"
