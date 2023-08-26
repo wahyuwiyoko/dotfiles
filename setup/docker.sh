@@ -25,7 +25,7 @@ download_package "https://download.docker.com/linux/debian/dists/bookworm/pool/s
 cd "$HOME/downloads/docker" || exit
 
 # Install packages
-sudo apt install ./containerd.io_1.6.22-1_amd64.deb \
+sudo apt install -y ./containerd.io_1.6.22-1_amd64.deb \
   ./docker-ce_24.0.5-1~debian.12~bookworm_amd64.deb \
   ./docker-ce-cli_24.0.5-1~debian.12~bookworm_amd64.deb \
   ./docker-buildx-plugin_0.11.2-1~debian.12~bookworm_amd64.deb \
