@@ -31,4 +31,8 @@ sudo apt-file update
 xdg-user-dirs-update
 
 # Dotfiles directory from $HOME to follow XDG base directory
-mkdir -p "$HOME/.local/state/bash" "$HOME/.local/state/less" "$HOME/.local/bin"
+mkdir -p "$HOME/.local/state/bash" "$HOME/.local/state/less" \
+  "$HOME/.local/bin" "$HOME/.local/share/gnupg"
+
+# Change gnupg directory permission
+chmod g-xr,o-xr "$HOME/.local/share/gnupg"

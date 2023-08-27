@@ -16,8 +16,8 @@ wget -P "$HOME/downloads/themes" -c --show-progress \
   https://github.com/catppuccin/cursors/releases/download/v0.2.0/Catppuccin-Mocha-Dark-Cursors.zip
 
 # Move theme, icon, and cursor theme in local directory
-mv "$HOME/downloads/themes/gtk3/rose-pine-gtk" "$HOME/.local/share/themes/rose-pine"
-mv "$HOME/downloads/themes/icons/rose-pine-icons" "$HOME/.local/share/icons/rose-pine"
+mv "$HOME/downloads/themes/gtk3/rose-pine-gtk" "$HOME/.local/share/themes"
+mv "$HOME/downloads/themes/icons/rose-pine-icons" "$HOME/.local/share/icons"
 unzip "$HOME/downloads/themes/Catppuccin-Mocha-Dark-Cursors.zip" -d "$HOME/.local/share/icons"
 
 # Update the icon cache
