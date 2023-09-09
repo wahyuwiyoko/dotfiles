@@ -25,6 +25,9 @@ extract_tarballs "https://github.com/Kong/insomnia/releases/download/core%402023
 # ngrok
 extract_tarballs "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
 
+# hurl
+extract_tarballs "https://github.com/Orange-OpenSource/hurl/releases/download/4.0.0/hurl-4.0.0-x86_64-linux.tar.gz"
+
 # xdg-ninja
 wget -P "$HOME/downloads/development" -c --show-progress \
   https://github.com/b3nj5m1n/xdg-ninja/archive/refs/heads/main.zip
