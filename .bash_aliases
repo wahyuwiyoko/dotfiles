@@ -1,5 +1,6 @@
 # General
 alias c="clear"
+alias v="nvim"
 alias la="ls -A"
 alias ll="ls -lAh"
 alias mkdir="mkdir -pv"
