@@ -1,0 +1,134 @@
+_miniserve() {
+    local i cur prev opts cmd
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    cmd=""
+    opts=""
+
+    for i in ${COMP_WORDS[@]}
+    do
+        case "${cmd},${i}" in
+            ",$1")
+                cmd="miniserve"
+                ;;
+            *)
+                ;;
+        esac
+    done
+
+    case "${cmd}" in
+        miniserve)
+            opts="-v -p -i -a -P -H -c -d -q -u -U -m -M -o -r -g -z -D -t -l -F -W -h -V --verbose --index --spa --port --interfaces --auth --route-prefix --random-route --no-symlinks --hidden --color-scheme --color-scheme-dark --qrcode --upload-files --mkdir --media-type --raw-media-type --overwrite-files --enable-tar --enable-tar-gz --enable-zip --dirs-first --title --header --show-symlink-info --hide-version-footer --hide-theme-selector --show-wget-footer --print-completions --print-manpage --tls-cert --tls-key --readme --help --version [PATH]"
+            if [[ ${cur} == -* || ${COMP_CWORD} -eq 1 ]] ; then
+                COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
+                return 0
+            fi
+            case "${prev}" in
+                --index)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                --port)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                -p)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                --interfaces)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                -i)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                --auth)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                -a)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                --route-prefix)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                --color-scheme)
+                    COMPREPLY=($(compgen -W "squirrel archlinux zenburn monokai" -- "${cur}"))
+                    return 0
+                    ;;
+                -c)
+                    COMPREPLY=($(compgen -W "squirrel archlinux zenburn monokai" -- "${cur}"))
+                    return 0
+                    ;;
+                --color-scheme-dark)
+                    COMPREPLY=($(compgen -W "squirrel archlinux zenburn monokai" -- "${cur}"))
+                    return 0
+                    ;;
+                -d)
+                    COMPREPLY=($(compgen -W "squirrel archlinux zenburn monokai" -- "${cur}"))
+                    return 0
+                    ;;
+                --upload-files)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                -u)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                --media-type)
+                    COMPREPLY=($(compgen -W "image audio video" -- "${cur}"))
+                    return 0
+                    ;;
+                -m)
+                    COMPREPLY=($(compgen -W "image audio video" -- "${cur}"))
+                    return 0
+                    ;;
+                --raw-media-type)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                -M)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                --title)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                -t)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                --header)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                --print-completions)
+                    COMPREPLY=($(compgen -W "bash elvish fish powershell zsh" -- "${cur}"))
+                    return 0
+                    ;;
+                --tls-cert)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                --tls-key)
+                    COMPREPLY=($(compgen -f "${cur}"))
+                    return 0
+                    ;;
+                *)
+                    COMPREPLY=()
+                    ;;
+            esac
+            COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
+            return 0
+            ;;
+    esac
+}
+
+complete -F _miniserve -o bashdefault -o default miniserve
