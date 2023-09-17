@@ -5,14 +5,8 @@ alias la="ls -A"
 alias ll="ls -lAh"
 alias mkdir="mkdir -pv"
 alias rmdir="rmdir -pv"
-alias xcp="xclip -selection clipboard"
-alias cpimg="xclip -selection clipboard -t image/png -i"
 alias pkgsearch="dpkg -l | grep"
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
-
-# Environment
-alias mergex="xrdb -merge $XDG_CONFIG_HOME/X11/xresources"
-alias pyserver="python3 -m http.server --directory"
 
 # APT
 alias update="sudo apt update"
@@ -64,10 +58,7 @@ alias dirsize="du -had 1 | sort -hr"
 alias wifion="nmcli radio wifi on"
 alias wifioff="nmcli radio wifi off"
 alias wifilist="nmcli device wifi list"
-alias wificonn="nmcli device wifi connect --ask"
 alias netstats="nmcli device status"
-alias netup="nmcli connection up --ask"
-alias netdc="nmcli device disconnect"
 
 wifipass() {
   nmcli connection show "$1" -s | grep psk
