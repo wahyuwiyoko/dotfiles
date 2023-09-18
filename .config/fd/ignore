@@ -1,1 +1,13 @@
+.git
+.ssh
+.gnupg
+.mozilla
+.pki
+.Xauthority
+.dmrc
+.bash_logout
+.cache
+.local/share
+.local/state
+icon-theme.cache
 node_modules
