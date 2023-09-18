@@ -1,12 +1,13 @@
 # General
 alias c="clear"
 alias v="nvim"
+alias vz='nvim $(fdfind . --hidden --type file | fzf)'
 alias la="ls -A"
 alias ll="ls -lAh"
 alias mkdir="mkdir -pv"
 alias rmdir="rmdir -pv"
 alias pkgsearch="dpkg -l | grep"
-alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
+alias wget='wget --hsts-file=$XDG_DATA_HOME/wget-hsts'
 
 # APT
 alias update="sudo apt update"
