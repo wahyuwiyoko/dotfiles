@@ -1,11 +1,9 @@
 #!/bin/sh
 
-# https://github.com/lwfinger/rtw88
+# Source: https://github.com/lwfinger/rtw88
 
-# Make sure these build packages are installed:
-# `make gcc linux-headers-$(uname -r) build-essential git`
-
-# Reboot after install the packages
+# Make sure update the repository and install build packages
+# And reboot the system after install the packages
 # sudo apt update
 # sudo apt install make gcc linux-headers-$(uname -r) build-essential git
 
@@ -18,9 +16,9 @@ cd "$HOME/downloads/rtw88" || exit
 # Build the module
 make
 
-# Install the module
+# Install the module to the kernel
 sudo make install
 
-# Load core and rtl8723du module
+# Unload the core module and load the rtl8723du module
 sudo modprobe -r rtw_core
 sudo modprobe rtw_8723du
