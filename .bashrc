@@ -18,10 +18,5 @@ if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
   . /usr/share/doc/fzf/examples/key-bindings.bash
 fi
 
-# Source fzf completion
-if [ -f "$HOME/.local/share/bash-completion/completions/fzf" ]; then
-  . "$HOME/.local/share/bash-completion/completions/fzf"
-fi
-
 # Environment variables for interactive login shell
 export GPG_TTY="$(tty)"
