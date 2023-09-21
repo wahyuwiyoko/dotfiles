@@ -6,7 +6,7 @@
 sudo apt install -y alacritty firefox-esr lf mpv cmus zathura pass newsboat
 
 # Tools
-sudo apt install -y ripgrep fd-find plocate tmux yt-dlp fzf \
+sudo apt install -y ripgrep fd-find plocate tmux yt-dlp fzf intel-gpu-tools \
   shellcheck libimage-exiftool-perl trash-cli tlp playerctl tealdeer
 
 # Update database for plocate package

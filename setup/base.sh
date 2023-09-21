@@ -4,7 +4,7 @@
 sudo apt install -y firmware-linux firmware-realtek intel-microcode
 
 # Hardware acceleration
-sudo apt install -y va-driver-all vainfo libva2 intel-gpu-tools
+sudo apt install -y va-driver-all vainfo libva2
 
 # Build tools packages needed to build and compile software from source
 sudo apt install -y build-essential dkms linux-headers-"$(uname -r)"
