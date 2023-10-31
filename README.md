@@ -7,8 +7,8 @@ no icons included.
 
 All setup and installer scripts are available in [setup](setup/) directory.
 
-You can find a list of wallpaper that I liked in
-[screenshots/wallpapers.md](screenshots/wallpapers.md).
+You can find a list of wallpapers that I liked in
+[wallpapers.md](wallpapers.md).
 
 ## Screenshots
 
