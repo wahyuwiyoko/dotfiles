@@ -1,90 +1,72 @@
 # Dotfiles
 
-i3, bspwm, Sway, and many other software configurations and scripts for my desktop.
-
-I try to avoid using Nerd Fonts or any other patched fonts, so there are
-no icons included.
+i3, bspwm, Sway, and many other software configurations for desktop.
 
 All setup and installer scripts are available in [setup](setup/) directory.
+
+I also have Neovim configuration that you can check in my
+[nvim repository](https://github.com/wahyuwiyoko/nvim).
 
 You can find a list of wallpapers that I liked in
 [wallpapers.md](wallpapers.md).
 
-## Screenshots
-
-You can look Neovim screenshot in my
-[nvim repository](https://github.com/wahyuwiyoko/nvim).
-
-### i3 + i3status
-
-My first tiling window manager, because it's well documented for new user.
+## i3 + i3status
 
 ![i3 with i3status](screenshots/i3.png)
 
-### bspwm + Polybar
-
-I like how bspwm have dynamic tiling and monocle layout.
+## bspwm + Polybar
 
 ![bspwm with Polybar](screenshots/bspwm.png)
 
-### Sway + Waybar
-
-I'm glad that there is an _i3-like_ for Wayland. It's my main window
-manager by now, just because it's smoother and simpler than X11.
+## Sway + Waybar
 
 ![Sway with Waybar](screenshots/sway.png)
 
 ## Systems
 
-- Distribution: Debian Bookworm
+- Distribution: Debian
 - Shell: Bash
 - Init system: systemd
-- Graphics: Intel GeminiLake
 - Display server: X11 and Wayland
 - Window manager: i3, bspwm, and Sway
 - Status bar: i3status, i3blocks, Polybar, swaybar, and Waybar
-- Multimedia server: PipeWire
+- Multimedia server: PipeWire with WirePlumber and ALSA for compatibility
 - Notification daemon: Dunst (X11) and Mako (Wayland)
 - Screen locker: i3lock (X11) and swaylock (Wayland)
 - Backlight controller: light
 
-## Software
-
-- Terminal emulator: Alacritty
-- Application launcher: Rofi (X11) and Fuzzel (Wayland)
-- Text editor: Neovim
-- File manager: lf
-- Image viewer: nsxiv (X11) and swayimg (Wayland)
-- Screenshoter: maim (X11) and grimshot (Wayland)
-
 ## Notes
 
-- Different distribution have different packages name.
-- View the scripts and configurations first before using it.
-- Change the configurations according to your hardware and applications that
+- Different distributions may have different packages name.
+- View the scripts and configuration files first before using it.
+- Change the configurations according to your software and hardware that
   you need.
+- This setup is configured at 1366x768 with 96 DPI. Some of them may be break
+  on lower or higher screen resolution.
+- Most of all configuration are themed with Rosé Pine theme.
+- No Nerd Fonts are included in any configuration files. Only JetBrains
+  Mono and Inter font are mostly I used.
 - If you want to start X manually using `startx`, modify the
   [~/.config/X11/xsession](.config/X11/xsession) file and add `xinput`
-  configuration before execute the window manager.
+  configuration before execute the window manager to set your input devices
+  properly.
 
 ## Tips
 
-- For more details about my set up and some packages that I used, you can read
+- For more details about my setups and some packages that I used, you can read
   [my Debian setup](https://wahyuwiyoko.github.io/blog/linux/my-debian-setup/)
   post.
 - I also had an article
   [how to enable touchpad tap-to-click](https://wahyuwiyoko.github.io/blog/linux/enable-touchpad-tap-to-click/)
-  if you are curios how to enable it.
+  if you are curios how to enable it manually.
 - If you want sxhkd to have like i3 binding mode, you can do that by following
-  this example [issue](https://github.com/baskerville/sxhkd/issues/58).
+  the example [issue](https://github.com/baskerville/sxhkd/issues/58).
 - To disable bluetooth:
-
-```bash
-sudo systemctl disable bluetooth
-sudo systemctl mask bluetooth.target
-```
-
-- If you want to tweak Xorg driver for Intel graphics, see the man pages for
+  ```bash
+  sudo systemctl disable bluetooth
+  sudo systemctl mask bluetooth.target
+  ```
+- If you want to tweak Xorg driver for Intel graphics, see the manual pages for
   more details: `man intel`
 - To know what keybinds pressed, use `xev` for X11, and `wev` for Wayland.
 - If you have a cursor theme that stored in system-wide (`/usr/share/icons`)
@@ -100,5 +82,4 @@ sudo systemctl mask bluetooth.target
 - [drewgrif](https://github.com/drewgrif)
 - [Eric Murphy](https://github.com/ericmurphyxyz)
 - [Ilham](https://github.com/ilhamisbored)
-- [Alex Booker](https://github.com/bookercodes)
 - [Rosé Pine](https://rosepinetheme.com/)
