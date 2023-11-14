@@ -2,13 +2,17 @@
   name =
   email =
   signingKey =
+
 [core]
   editor = nvim
+
 [init]
   defaultBranch = main
+
 [commit]
   gpgSign = true
   template = ~/.config/git/commit-template.txt
+
 [alias]
   st = status
   cm = commit
@@ -16,4 +20,5 @@
   ds = diff --staged
   onel = log --oneline
   graph = log --all --oneline --decorate --graph
+  branch-verbose = branch -vv
   diff-words = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
