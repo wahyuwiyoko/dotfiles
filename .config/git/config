@@ -13,6 +13,10 @@
   gpgSign = true
   template = ~/.config/git/commit-template.txt
 
+[merge]
+  tool = nvimdiff
+  conflictstyle = diff3
+
 [alias]
   st = status
   cm = commit
