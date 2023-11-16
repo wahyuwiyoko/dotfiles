@@ -6,17 +6,11 @@
 sudo apt install -y alacritty firefox-esr lf mpv cmus zathura pass newsboat
 
 # Tools
-sudo apt install -y ripgrep fd-find plocate tmux yt-dlp fzf intel-gpu-tools \
-  shellcheck libimage-exiftool-perl trash-cli tlp playerctl tealdeer
-
-# Update database for plocate package
-sudo updatedb
+sudo apt install -y ripgrep fd-find tmux yt-dlp fzf intel-gpu-tools \
+  shellcheck libimage-exiftool-perl trash-cli playerctl tealdeer
 
 # Choose default terminal emulator
 sudo update-alternatives --config x-terminal-emulator
-
-# Enable TLP
-sudo systemctl enable tlp
 
 # Create local binary directory
 mkdir -p "$HOME/.local/bin"
