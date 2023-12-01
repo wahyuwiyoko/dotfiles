@@ -51,8 +51,8 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Window style
 title_align center
-default_border pixel 3
-default_floating_border pixel 3
+default_border pixel 2
+default_floating_border pixel 2
 gaps inner 10
 
 # Program launcher
@@ -253,5 +253,5 @@ client.focused          $iris  $iris    $base $iris     $iris
 client.focused_inactive $muted $surface $text $muted    $muted
 client.unfocused        $muted $surface $text $muted    $muted
 client.urgent           $love  $love    $base $love     $love
-client.placeholder      $base  $base    $text $base     $base 
+client.placeholder      $base  $base    $text $base     $base
 client.background       $base

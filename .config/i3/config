@@ -28,8 +28,8 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 # Window style
 title_align center
 hide_edge_borders both
-default_border pixel 3
-default_floating_border pixel 3
+default_border pixel 2
+default_floating_border pixel 2
 gaps inner 10
 
 # Move tiling windows via drag & drop by modifier and left-clicking
