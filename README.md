@@ -54,10 +54,10 @@ You can find a list of wallpapers that I liked in
 ## Tips
 
 - For more details about my setups and some packages that I used, you can read
-  [my Debian setup](https://wahyuwiyoko.github.io/blog/linux/my-debian-setup/)
+  [my Debian setup](https://wahyuwiyoko.github.io/blog/post/my-debian-setup/)
   post.
 - I also had an article
-  [how to enable touchpad tap-to-click](https://wahyuwiyoko.github.io/blog/linux/enable-touchpad-tap-to-click/)
+  [how to enable touchpad tap-to-click](https://wahyuwiyoko.github.io/blog/post/enable-touchpad-tap-to-click/)
   if you are curios how to enable it manually.
 - If you want sxhkd to have like i3 binding mode, you can do that by following
   the example [issue](https://github.com/baskerville/sxhkd/issues/58).
