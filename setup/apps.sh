@@ -17,8 +17,8 @@ mkdir -p "$HOME/.local/bin"
 
 # miniserve
 wget -c --show-progress \
-  https://github.com/svenstaro/miniserve/releases/download/v0.24.0/miniserve-0.24.0-x86_64-unknown-linux-gnu
+  https://github.com/svenstaro/miniserve/releases/download/v0.25.0/miniserve-0.25.0-x86_64-unknown-linux-gnu
 
-chmod +x miniserve-0.24.0-x86_64-unknown-linux-gnu
+chmod +x miniserve-0.25.0-x86_64-unknown-linux-gnu
 
-mv miniserve-0.24.0-x86_64-unknown-linux-gnu "$HOME/.local/bin/miniserve"
+mv miniserve-0.25.0-x86_64-unknown-linux-gnu "$HOME/.local/bin/miniserve"

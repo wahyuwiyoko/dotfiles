@@ -11,16 +11,16 @@ extract_tarballs() {
 extract_tarballs "https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz"
 
 # Go compiler
-extract_tarballs "https://go.dev/dl/go1.20.7.linux-amd64.tar.gz"
+extract_tarballs "https://go.dev/dl/go1.21.6.linux-amd64.tar.gz"
 
 # Hugo
-extract_tarballs "https://github.com/gohugoio/hugo/releases/download/v0.116.1/hugo_0.116.1_linux-amd64.tar.gz"
+extract_tarballs "https://github.com/gohugoio/hugo/releases/download/v0.121.2/hugo_0.121.2_linux-amd64.tar.gz"
 
 # ngrok
 extract_tarballs "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
 
 # hurl
-extract_tarballs "https://github.com/Orange-OpenSource/hurl/releases/download/4.0.0/hurl-4.0.0-x86_64-linux.tar.gz"
+extract_tarballs "https://github.com/Orange-OpenSource/hurl/releases/download/4.1.0/hurl-4.1.0-x86_64-unknown-linux-gnu.tar.gz"
 
 # xdg-ninja
 wget -P "$HOME/downloads/development" -c --show-progress \
