@@ -10,6 +10,11 @@ extract_tarballs() {
 # Neovim
 extract_tarballs "https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz"
 
+# Bun
+mkdir -p "$HOME/.local/share/bun"
+export BUN_INSTALL="$HOME/.local/share/bun"
+curl -fsSL https://bun.sh/install | bash
+
 # Go compiler
 extract_tarballs "https://go.dev/dl/go1.21.6.linux-amd64.tar.gz"
 
