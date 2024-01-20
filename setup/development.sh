@@ -24,7 +24,7 @@ extract_tarballs "https://github.com/gohugoio/hugo/releases/download/v0.121.2/hu
 # ngrok
 extract_tarballs "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
 
-# hurl
+# Hurl
 extract_tarballs "https://github.com/Orange-OpenSource/hurl/releases/download/4.1.0/hurl-4.1.0-x86_64-unknown-linux-gnu.tar.gz"
 
 # xdg-ninja
@@ -35,3 +35,6 @@ unzip "$HOME/downloads/development/main.zip" -d "$HOME/software"
 
 # Lua interpreter
 sudo apt install -y lua5.4
+
+# DBMS
+sudo apt install -y postgresql-15
