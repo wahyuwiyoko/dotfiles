@@ -1,3 +1,7 @@
 prefix="${XDG_DATA_HOME}/npm"
 cache="${XDG_CACHE_HOME}/npm"
+
 init-module="${XDG_CONFIG_HOME}/npm/config/npm-init.js"
+init-author-name="Wahyu Wiyoko"
+init-license="MIT"
+init-version="0.1.0"
