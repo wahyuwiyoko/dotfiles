@@ -21,6 +21,9 @@
   st = status
   cm = commit
   ptc = add --patch
+  unstage = restore --staged
+  amend = commit --amend --no-edit
+  pf = push --force-with-lease
   ds = diff --staged
   onel = log --oneline
   graph = log --all --oneline --decorate --graph
