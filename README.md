@@ -38,14 +38,13 @@ You can find a list of wallpapers that I liked in
 ## Notes
 
 - Different distributions may have different packages name.
-- View the scripts and configuration files first before using it.
-- Change the configurations according to your software and hardware that
-  you need.
+- View the scripts and configuration files before using it.
 - This setup is configured at 1366x768 with 96 DPI. Some of them may be break
   on lower or higher screen resolution.
-- Most of all configuration are themed with Rosé Pine theme.
+- Most of all configuration are themed with
+  [Rosé Pine](https://rosepinetheme.com/) theme.
 - No Nerd Fonts are included in any configuration files. Only JetBrains
-  Mono and Inter font are mostly I used.
+  Mono and Inter font.
 - If you want to start X manually using `startx`, modify the
   [~/.config/X11/xsession](.config/X11/xsession) file and add `xinput`
   configuration before execute the window manager to set your input devices
@@ -75,7 +74,7 @@ You can find a list of wallpapers that I liked in
   `~/.local/share/icons/default/index.theme` according to your icons directory
   name.
 
-## Special Thanks
+## Acknowledgements 
 
 - [Addy](https://github.com/addy-dclxvi)
 - [Derek Taylor](https://gitlab.com/dwt1)
